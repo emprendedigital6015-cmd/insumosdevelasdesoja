@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>InsumoVela</title>
+<meta name="description" content="Encontrá, comparés y guardá tus proveedores de insumos para velas de soja.">
+<meta name="theme-color" content="#F7EFE1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="InsumoVela">
+<link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="./icons/favicon-32.png">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+<!-- PANTALLA DE BIENVENIDA (primera vez) -->
+<div id="pantalla-bienvenida" class="pantalla-full oculto">
+  <div class="bienvenida-card">
+    <div class="logo-llama" aria-hidden="true">
+      <svg viewBox="0 0 48 64" width="40" height="54">
+        <path d="M24 2C14 16 8 26 8 38a16 16 0 0 0 32 0c0-6-3-11-6-15 1 6-2 9-5 9-4 0-5-4-3-9C21 27 24 20 24 2z" fill="var(--wax)"/>
+      </svg>
+    </div>
+    <h1>Bienvenido a InsumoVela</h1>
+    <p>Encontrá proveedores de insumos para velas de soja, comparás precios y ahorrás tiempo en cada compra.</p>
+    <label class="campo">
+      <span>¿Cómo te llamamos?</span>
+      <input type="text" id="input-nombre-usuario" placeholder="Tu nombre" autocomplete="given-name">
+    </label>
+    <button class="btn-principal" id="btn-comenzar">Comenzar</button>
+  </div>
+</div>
+
+<!-- APP -->
+<div id="app" class="oculto">
+
+  <header class="app-header">
+    <div class="header-titulo">
+      <svg viewBox="0 0 48 64" width="22" height="30" aria-hidden="true">
+        <path d="M24 2C14 16 8 26 8 38a16 16 0 0 0 32 0c0-6-3-11-6-15 1 6-2 9-5 9-4 0-5-4-3-9C21 27 24 20 24 2z" fill="var(--wax)"/>
+      </svg>
+      <span>InsumoVela</span>
+    </div>
+    <button class="btn-config" id="btn-abrir-config" aria-label="Configuración" title="Configuración">⚙</button>
+  </header>
+
+  <main id="contenido-principal"></main>
+
+  <nav class="nav-inferior" id="nav-inferior">
+    <button class="nav-item activo" data-pantalla="inicio" aria-label="Inicio">
+      <span class="nav-icono" aria-hidden="true">🏠</span>
+      <span class="nav-texto">Inicio</span>
+    </button>
+    <button class="nav-item" data-pantalla="buscar" aria-label="Buscar y comparar">
+      <span class="nav-icono" aria-hidden="true">🔍</span>
+      <span class="nav-texto">Buscar</span>
+    </button>
+    <button class="nav-item" data-pantalla="favoritos" aria-label="Favoritos">
+      <span class="nav-icono" aria-hidden="true">♥</span>
+      <span class="nav-texto">Favoritos</span>
+    </button>
+    <button class="nav-item" data-pantalla="tips" aria-label="Tips de ahorro">
+      <span class="nav-icono" aria-hidden="true">💡</span>
+      <span class="nav-texto">Tips</span>
+    </button>
+  </nav>
+</div>
+
+<!-- MODAL FILTROS -->
+<div id="modal-filtros" class="modal oculto" role="dialog" aria-label="Filtros avanzados">
+  <div class="modal-contenido">
+    <div class="modal-header">
+      <h2>Filtros</h2>
+      <button class="btn-cerrar-modal" data-close="modal-filtros" aria-label="Cerrar">✕</button>
+    </div>
+    <div class="modal-body" id="modal-filtros-body"></div>
+    <div class="modal-footer">
+      <button class="btn-secundario" id="btn-limpiar-filtros">Limpiar filtros</button>
+      <button class="btn-principal" id="btn-aplicar-filtros">Ver resultados</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL CONFIGURACION -->
+<div id="modal-config" class="modal oculto" role="dialog" aria-label="Configuración">
+  <div class="modal-contenido">
+    <div class="modal-header">
+      <h2>Configuración</h2>
+      <button class="btn-cerrar-modal" data-close="modal-config" aria-label="Cerrar">✕</button>
+    </div>
+    <div class="modal-body">
+      <label class="campo">
+        <span>Tu nombre</span>
+        <input type="text" id="config-nombre-usuario">
+      </label>
+      <button class="btn-secundario ancho-completo" id="btn-guardar-config">Guardar cambios</button>
+      <hr class="separador">
+      <button class="btn-peligro ancho-completo" id="btn-borrar-favoritos">Borrar todos los favoritos</button>
+      <p class="texto-legal">InsumoVela es una guía informativa de proveedores. No participamos en las transacciones ni garantizamos precios, stock o calidad de los productos de terceros.</p>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL CONFIRMACION -->
+<div id="modal-confirmar" class="modal oculto" role="alertdialog" aria-label="Confirmar acción">
+  <div class="modal-contenido modal-chico">
+    <p id="modal-confirmar-texto"></p>
+    <div class="modal-footer">
+      <button class="btn-secundario" id="btn-confirmar-cancelar">Cancelar</button>
+      <button class="btn-peligro" id="btn-confirmar-aceptar">Confirmar</button>
+    </div>
+  </div>
+</div>
+
+<div id="toast" class="toast oculto" role="status" aria-live="polite"></div>
+
+<script src="./data/proveedores.js"></script>
+<script src="./data/tips.js"></script>
+<script src="./app.js"></script>
+</body>
+</html>
