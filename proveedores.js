@@ -324,5 +324,82 @@ window.PROVEEDORES = [
     enlace: "https://www.mundoroccohome.com.ar/",
     notas: "Apagavelas y otros accesorios (dijes, vinilos, glitter decorativo). Precio de referencia verificado en la web.",
     ultimaActualizacion: "2026-08-03"
+  },
+  {
+    id: "p031",
+    nombre: "Tía Robertina (sitio oficial)",
+    categoria: "pabilos",
+    precio: 0,
+    unidad: "consultar",
+    ubicacion: "CABA",
+    enlace: "https://ceradesoja.mitiendanube.com/cera-de-soja2/insumos-aditivos/",
+    notas: "Pabilos, ojalillos y aditivos. Mismo proveedor que ya tenías (Instagram @tia.robertina), ahora con el link de su tienda oficial.",
+    ultimaActualizacion: "2026-08-03"
+  },
+  {
+    id: "p032",
+    nombre: "Tía Robertina (colorantes)",
+    categoria: "colorantes",
+    precio: 0,
+    unidad: "consultar",
+    ubicacion: "CABA",
+    enlace: "https://ceradesoja.mitiendanube.com/todo-para-velas/",
+    notas: "Colorantes para velas, varios colores. Tienda oficial verificada (agosto 2026).",
+    ultimaActualizacion: "2026-08-03"
+  },
+  {
+    id: "p033",
+    nombre: "AUPAR S.R.L. - La Esquina Rosa",
+    categoria: "ceras",
+    precio: 7664,
+    unidad: "por kg",
+    ubicacion: "CABA",
+    enlace: "https://tiendaaupar.com.ar/ceras-de-soja/",
+    notas: "Local histórico en Villa Crespo desde 1939. Cera de soja comercial x 1kg. Envíos a todo el país, entregas en 24hs en CABA/GBA. WhatsApp: wa.me/5491157443917. Precio verificado en la web (agosto 2026).",
+    ultimaActualizacion: "2026-08-03"
+  },
+  {
+    id: "p034",
+    nombre: "AUPAR (pabilos y colorantes)",
+    categoria: "pabilos",
+    precio: 6047,
+    unidad: "por 10 metros",
+    ubicacion: "CABA",
+    enlace: "https://tiendaaupar.com.ar/insumos-para-velas/pabilos/",
+    notas: "Pabilo mediano con baño x 10 metros. También tienen colorantes y fragancias en la misma sección de insumos para velas. Precio verificado en la web.",
+    ultimaActualizacion: "2026-08-03"
+  },
+  {
+    id: "p035",
+    nombre: "Aromas y Esencias S.A.",
+    categoria: "fragancias",
+    precio: 0,
+    unidad: "consultar (packs y kits)",
+    ubicacion: "GBA",
+    enlace: "https://aromasyesenciasa.mitiendanube.com/velas-placas-y-wax-melts/",
+    notas: "50 años en el mercado fabricando esencias concentradas. Avellaneda, Buenos Aires. Envíos a todo el país. Asesoramiento personalizado. WhatsApp: wa.me/541161473006.",
+    ultimaActualizacion: "2026-08-03"
+  },
+  {
+    id: "p036",
+    nombre: "Insumos Velas Mágicas",
+    categoria: "ceras",
+    precio: 0,
+    unidad: "consultar",
+    ubicacion: "Interior",
+    enlace: "https://esenciasvelasmagicas.empretienda.com.ar/insumos-para-velas/cera-apf-blend-velas-magicas-moldes-lista-para-usar-x1-kilo",
+    notas: "Cera APF Blend de formulación propia. Local en Mar del Plata, envíos a todo el país y Paraguay. WhatsApp: +5492233012157.",
+    ultimaActualizacion: "2026-08-03"
+  },
+  {
+    id: "p037",
+    nombre: "Poligar SRL",
+    categoria: "recipientes",
+    precio: 0,
+    unidad: "consultar",
+    ubicacion: "Envío nacional",
+    enlace: "https://poligarsrl.com.ar/",
+    notas: "Empresa con más de 25 años en envases de vidrio y polietileno, embalaje y descartables. Tiene sección específica de \"Velas e insumos\". Envíos a domicilio y sucursales Andreani/Correo Argentino en todo el país.",
+    ultimaActualizacion: "2026-08-03"
   }
 ];
