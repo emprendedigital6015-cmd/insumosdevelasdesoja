@@ -3,14 +3,14 @@
 
   /* ---------------- Constantes ---------------- */
   var CATEGORIAS = [
-    { id: "ceras", nombre: "Ceras", color: "#C1791E" },
-    { id: "pabilos", nombre: "Pabilos", color: "#3F4A3D" },
-    { id: "fragancias", nombre: "Fragancias", color: "#B24A2E" },
-    { id: "colorantes", nombre: "Colorantes", color: "#2E7D6B" },
-    { id: "moldes", nombre: "Moldes", color: "#8A6A46" },
-    { id: "recipientes", nombre: "Recipientes", color: "#5C7A5E" },
-    { id: "endurecedores", nombre: "Endurecedores", color: "#5A5A6B" },
-    { id: "otros", nombre: "Otros", color: "#8E7B5C" }
+    { id: "ceras", nombre: "Ceras", color: "#B88A44" },
+    { id: "pabilos", nombre: "Pabilos", color: "#5A4535" },
+    { id: "fragancias", nombre: "Fragancias", color: "#7A3B2E" },
+    { id: "colorantes", nombre: "Colorantes", color: "#8C7A5E" },
+    { id: "moldes", nombre: "Moldes", color: "#B9A892" },
+    { id: "recipientes", nombre: "Recipientes", color: "#6B5A44" },
+    { id: "endurecedores", nombre: "Endurecedores", color: "#3A3A3A" },
+    { id: "otros", nombre: "Otros", color: "#C4B594" }
   ];
   var ZONAS = ["Envío nacional", "CABA", "GBA", "Interior"];
 

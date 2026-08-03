@@ -1,4 +1,4 @@
-# InsumoVela
+# Insumos para Velas de Soja
 
 Encontrá, comparás y guardá tus proveedores de insumos para velas de soja: ceras, pabilos, fragancias, colorantes, moldes, recipientes y más.
 
@@ -39,4 +39,4 @@ Esta primera versión incluye: búsqueda por categoría y texto, filtros avanzad
 
 No incluye (a propósito, para mantenerla simple): pagos dentro de la app, cuentas de usuario, chat con proveedores, reseñas ni panel de administración.
 
-**Aviso:** InsumoVela es una guía informativa de proveedores. No participamos en las transacciones ni garantizamos precios, stock o calidad de los productos de terceros.
+**Aviso:** Insumos para Velas de Soja es una guía informativa de proveedores. No participamos en las transacciones ni garantizamos precios, stock o calidad de los productos de terceros.
