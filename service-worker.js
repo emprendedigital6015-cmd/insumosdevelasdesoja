@@ -5,12 +5,12 @@ var ARCHIVOS_ESENCIALES = [
   "./styles.css",
   "./app.js",
   "./manifest.webmanifest",
-  "./data/proveedores.js",
-  "./data/tips.js",
-  "./icons/icon-192.png",
-  "./icons/icon-512.png",
-  "./icons/apple-touch-icon.png",
-  "./icons/favicon-32.png"
+  "./proveedores.js",
+  "./tips.js",
+  "./icon-192.png",
+  "./icon-512.png",
+  "./apple-touch-icon.png",
+  "./favicon-32.png"
 ];
 
 self.addEventListener("install", function (event) {
