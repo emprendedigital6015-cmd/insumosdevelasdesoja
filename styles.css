@@ -1,17 +1,22 @@
 :root{
-  --bg: #F8F6F2;
+  --bg: #FFF8F2;
+  --bg-destacado: #FFF1E6;
   --card: #FFFFFF;
-  --ink: #1F1F1F;
-  --ink-soft: #5A4535;
-  --wax: #C6A46A;
-  --wax-soft: #F0E6D2;
-  --wick: #355D4B;
-  --wick-soft: #DCE7E1;
-  --ember: #7A3B2E;
-  --linea: #E1D6C2;
+  --ink: #2F3542;
+  --ink-soft: #6C757D;
+  --coral: #FF7F50;
+  --coral-soft: #FFE4D6;
+  --turquesa: #4ECDC4;
+  --turquesa-soft: #DFF7F5;
+  --mostaza: #F4B942;
+  --mostaza-dark: #B8860B;
+  --mostaza-soft: #FDF0D5;
+  --rosa: #FF5D8F;
+  --rosa-soft: #FFE3EC;
+  --linea: #EAEAEA;
   --radio: 16px;
   --radio-chico: 10px;
-  --sombra: 0 2px 10px rgba(31,31,31,0.08);
+  --sombra: 0 2px 10px rgba(47,53,66,0.08);
   --safe-top: env(safe-area-inset-top, 0px);
   --safe-bottom: env(safe-area-inset-bottom, 0px);
 }
@@ -33,7 +38,7 @@ p{margin:0 0 12px 0;color:var(--ink-soft);}
 
 /* ---------- Botones ---------- */
 .btn-principal{
-  background:var(--wax);
+  background:var(--coral);
   color:#fff;
   border:none;
   border-radius:999px;
@@ -45,8 +50,8 @@ p{margin:0 0 12px 0;color:var(--ink-soft);}
 }
 .btn-principal:active{transform:scale(0.98);}
 .btn-secundario{
-  background:var(--wick-soft);
-  color:var(--wick);
+  background:var(--turquesa-soft);
+  color:var(--turquesa);
   border:none;
   border-radius:999px;
   min-height:48px;
@@ -56,7 +61,7 @@ p{margin:0 0 12px 0;color:var(--ink-soft);}
 }
 .btn-peligro{
   background:#FBEAE5;
-  color:var(--ember);
+  color:var(--rosa);
   border:none;
   border-radius:999px;
   min-height:48px;
@@ -105,7 +110,7 @@ p{margin:0 0 12px 0;color:var(--ink-soft);}
   color:var(--ink);
 }
 .campo input:focus, .campo select:focus, button:focus-visible{
-  outline:3px solid var(--wax-soft);
+  outline:3px solid var(--coral-soft);
   outline-offset:1px;
 }
 
@@ -166,7 +171,7 @@ main{
   font-weight:700;
 }
 .nav-icono{font-size:20px;}
-.nav-item.activo{color:var(--wax);}
+.nav-item.activo{color:var(--coral);}
 
 /* ---------- Tarjetas genéricas ---------- */
 .tarjeta{
@@ -181,7 +186,7 @@ main{
   font-weight:800;
   letter-spacing:.03em;
   text-transform:uppercase;
-  color:var(--wick);
+  color:var(--turquesa);
 }
 
 /* ---------- Inicio ---------- */
@@ -236,7 +241,7 @@ main{
   min-height:48px;
   min-width:48px;
   border-radius:999px;
-  background:var(--wick);
+  background:var(--turquesa);
   color:#fff;
   border:none;
   font-size:14px;
@@ -248,7 +253,7 @@ main{
   position:relative;
 }
 .badge-filtros{
-  background:var(--wax);
+  background:var(--coral);
   color:#fff;
   border-radius:999px;
   font-size:11px;
@@ -262,7 +267,7 @@ main{
   margin-bottom:12px;
 }
 .chip{
-  background:var(--wax-soft);
+  background:var(--coral-soft);
   color:var(--ink);
   border:none;
   border-radius:999px;
@@ -270,13 +275,13 @@ main{
   font-size:13px;
   font-weight:700;
 }
-.chip.activo{background:var(--wax);color:#fff;}
+.chip.activo{background:var(--coral);color:#fff;}
 .chip-removible{
   display:inline-flex;
   align-items:center;
   gap:6px;
-  background:var(--wick-soft);
-  color:var(--wick);
+  background:var(--turquesa-soft);
+  color:var(--turquesa);
   border-radius:999px;
   padding:6px 10px 6px 14px;
   font-size:13px;
@@ -293,7 +298,7 @@ main{
   color:var(--ink-soft);
 }
 .link-orden{
-  background:none;border:none;color:var(--wick);font-weight:800;font-size:13px;
+  background:none;border:none;color:var(--turquesa);font-weight:800;font-size:13px;
 }
 
 .proveedor-card{
@@ -319,7 +324,7 @@ main{
 }
 .proveedor-nombre{font-weight:800;font-size:15px;}
 .proveedor-cat{font-size:12px;color:var(--ink-soft);text-transform:capitalize;margin-bottom:4px;}
-.proveedor-precio{font-weight:800;color:var(--wax);font-size:16px;white-space:nowrap;}
+.proveedor-precio{font-weight:800;color:var(--mostaza-dark);font-size:16px;white-space:nowrap;}
 .proveedor-unidad{font-size:11px;color:var(--ink-soft);font-weight:400;}
 .proveedor-ubi{font-size:12px;color:var(--ink-soft);margin:2px 0 6px;}
 .proveedor-notas{font-size:12px;color:var(--ink-soft);margin-bottom:8px;}
@@ -330,12 +335,12 @@ main{
   border-radius:999px;
   width:40px;height:40px;
   font-size:17px;
-  color:var(--ember);
+  color:var(--rosa);
   flex-shrink:0;
 }
 .btn-favorito.activo{background:#FBEAE5;border-color:#FBEAE5;}
 .btn-ver{
-  background:var(--wick);
+  background:var(--turquesa);
   color:#fff;
   border:none;
   border-radius:999px;
@@ -354,11 +359,6 @@ main{
 .filtro-grupo{margin-bottom:18px;}
 .filtro-grupo h3{font-size:14px;}
 .chips-multi{display:flex;flex-wrap:wrap;gap:8px;}
-.rango-precio{display:flex;gap:10px;}
-.rango-precio input{
-  flex:1;min-height:44px;border-radius:var(--radio-chico);
-  border:1px solid var(--linea);padding:0 12px;font-size:15px;
-}
 
 /* ---------- Estado vacío ---------- */
 .estado-vacio{
@@ -369,24 +369,26 @@ main{
 .estado-vacio-icono{font-size:36px;margin-bottom:10px;}
 
 /* ---------- Favoritos recientes en inicio ---------- */
-.fav-recientes-titulo{font-size:14px;font-weight:800;margin:4px 0 10px;color:var(--wick);}
+.fav-recientes-titulo{font-size:14px;font-weight:800;margin:4px 0 10px;color:var(--turquesa);}
 
-/* ---------- Tips ---------- */
-.tips-grupo-titulo{
-  font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.03em;
-  color:var(--wick);margin:18px 0 8px;
+/* ---------- Envío nacional / fecha en tarjeta ---------- */
+.envio-nacional-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:4px;
+  background:var(--turquesa-soft);
+  color:var(--turquesa);
+  font-size:11px;
+  font-weight:800;
+  padding:3px 9px;
+  border-radius:999px;
+  margin-bottom:6px;
 }
-.tips-grupo-titulo:first-child{margin-top:0;}
-.tip-card{
-  background:var(--card);
-  border-left:4px solid var(--wax);
-  border-radius:var(--radio-chico);
-  box-shadow:var(--sombra);
-  padding:14px 16px;
-  margin-bottom:10px;
-}
-.tip-card h3{font-size:14px;margin-bottom:4px;}
-.tip-card p{font-size:13px;margin:0;}
+.proveedor-fecha{font-size:11px;color:var(--ink-soft);margin-top:2px;}
+
+/* ---------- Pantalla de Configuración ---------- */
+.config-seccion{margin-bottom:22px;}
+.config-seccion h3{font-size:14px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.03em;margin-bottom:10px;}
 
 /* ---------- Modales ---------- */
 .modal{
@@ -412,11 +414,11 @@ main{
   margin-bottom:12px;
 }
 .btn-cerrar-modal{
-  background:var(--wick-soft);
+  background:var(--turquesa-soft);
   border:none;
   border-radius:50%;
   width:34px;height:34px;
-  color:var(--wick);
+  color:var(--turquesa);
   font-size:14px;
 }
 .modal-footer{
@@ -434,7 +436,7 @@ main{
   bottom:calc(88px + var(--safe-bottom));
   left:50%;
   transform:translateX(-50%);
-  background:var(--wick);
+  background:var(--turquesa);
   color:#fff;
   padding:12px 20px;
   border-radius:999px;

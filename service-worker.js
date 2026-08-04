@@ -1,4 +1,4 @@
-var CACHE_NAME = "insumovela-cache-v1";
+var CACHE_NAME = "insumos-vela-cache-v2";
 var ARCHIVOS_ESENCIALES = [
   "./",
   "./index.html",
@@ -6,7 +6,6 @@ var ARCHIVOS_ESENCIALES = [
   "./app.js",
   "./manifest.webmanifest",
   "./proveedores.js",
-  "./tips.js",
   "./icon-192.png",
   "./icon-512.png",
   "./apple-touch-icon.png",

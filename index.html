@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Insumos para Velas de Soja</title>
 <meta name="description" content="Encontrá, comparés y guardá tus proveedores de insumos para velas de soja.">
-<meta name="theme-color" content="#F8F6F2">
+<meta name="theme-color" content="#FFF8F2">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="Insumos Velas Soja">
@@ -21,7 +21,7 @@
   <div class="bienvenida-card">
     <div class="logo-llama" aria-hidden="true">
       <svg viewBox="0 0 48 64" width="40" height="54">
-        <path d="M24 2C14 16 8 26 8 38a16 16 0 0 0 32 0c0-6-3-11-6-15 1 6-2 9-5 9-4 0-5-4-3-9C21 27 24 20 24 2z" fill="var(--wax)"/>
+        <path d="M24 2C14 16 8 26 8 38a16 16 0 0 0 32 0c0-6-3-11-6-15 1 6-2 9-5 9-4 0-5-4-3-9C21 27 24 20 24 2z" fill="var(--coral)"/>
       </svg>
     </div>
     <h1>Bienvenido a Insumos para Velas de Soja</h1>
@@ -40,11 +40,10 @@
   <header class="app-header">
     <div class="header-titulo">
       <svg viewBox="0 0 48 64" width="22" height="30" aria-hidden="true">
-        <path d="M24 2C14 16 8 26 8 38a16 16 0 0 0 32 0c0-6-3-11-6-15 1 6-2 9-5 9-4 0-5-4-3-9C21 27 24 20 24 2z" fill="var(--wax)"/>
+        <path d="M24 2C14 16 8 26 8 38a16 16 0 0 0 32 0c0-6-3-11-6-15 1 6-2 9-5 9-4 0-5-4-3-9C21 27 24 20 24 2z" fill="var(--coral)"/>
       </svg>
       <span>Insumos Velas de Soja</span>
     </div>
-    <button class="btn-config" id="btn-abrir-config" aria-label="Configuración" title="Configuración">⚙</button>
   </header>
 
   <main id="contenido-principal"></main>
@@ -62,9 +61,9 @@
       <span class="nav-icono" aria-hidden="true">♥</span>
       <span class="nav-texto">Favoritos</span>
     </button>
-    <button class="nav-item" data-pantalla="tips" aria-label="Tips de ahorro">
-      <span class="nav-icono" aria-hidden="true">💡</span>
-      <span class="nav-texto">Tips</span>
+    <button class="nav-item" data-pantalla="configuracion" aria-label="Configuración">
+      <span class="nav-icono" aria-hidden="true">⚙️</span>
+      <span class="nav-texto">Ajustes</span>
     </button>
   </nav>
 </div>
@@ -84,26 +83,6 @@
   </div>
 </div>
 
-<!-- MODAL CONFIGURACION -->
-<div id="modal-config" class="modal oculto" role="dialog" aria-label="Configuración">
-  <div class="modal-contenido">
-    <div class="modal-header">
-      <h2>Configuración</h2>
-      <button class="btn-cerrar-modal" data-close="modal-config" aria-label="Cerrar">✕</button>
-    </div>
-    <div class="modal-body">
-      <label class="campo">
-        <span>Tu nombre</span>
-        <input type="text" id="config-nombre-usuario">
-      </label>
-      <button class="btn-secundario ancho-completo" id="btn-guardar-config">Guardar cambios</button>
-      <hr class="separador">
-      <button class="btn-peligro ancho-completo" id="btn-borrar-favoritos">Borrar todos los favoritos</button>
-      <p class="texto-legal">Insumos para Velas de Soja es una guía informativa de proveedores. No participamos en las transacciones ni garantizamos precios, stock o calidad de los productos de terceros.</p>
-    </div>
-  </div>
-</div>
-
 <!-- MODAL CONFIRMACION -->
 <div id="modal-confirmar" class="modal oculto" role="alertdialog" aria-label="Confirmar acción">
   <div class="modal-contenido modal-chico">
@@ -118,7 +97,6 @@
 <div id="toast" class="toast oculto" role="status" aria-live="polite"></div>
 
 <script src="./proveedores.js"></script>
-<script src="./tips.js"></script>
 <script src="./app.js"></script>
 </body>
 </html>

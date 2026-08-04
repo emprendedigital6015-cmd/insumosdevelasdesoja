@@ -3,14 +3,14 @@
 
   /* ---------------- Constantes ---------------- */
   var CATEGORIAS = [
-    { id: "ceras", nombre: "Ceras", color: "#C6A46A" },
-    { id: "pabilos", nombre: "Pabilos", color: "#355D4B" },
-    { id: "fragancias", nombre: "Fragancias", color: "#8C6B3F" },
-    { id: "colorantes", nombre: "Colorantes", color: "#4A7A68" },
-    { id: "moldes", nombre: "Moldes", color: "#A78B5F" },
-    { id: "recipientes", nombre: "Recipientes", color: "#2D4A3D" },
-    { id: "endurecedores", nombre: "Endurecedores", color: "#3A3A3A" },
-    { id: "otros", nombre: "Otros", color: "#B9A892" }
+    { id: "ceras", nombre: "Ceras", color: "#F4B942" },
+    { id: "pabilos", nombre: "Pabilos", color: "#4ECDC4" },
+    { id: "fragancias", nombre: "Fragancias", color: "#FF7F50" },
+    { id: "colorantes", nombre: "Colorantes", color: "#A66CFF" },
+    { id: "moldes", nombre: "Moldes", color: "#5BC0EB" },
+    { id: "recipientes", nombre: "Recipientes", color: "#95D5B2" },
+    { id: "endurecedores", nombre: "Endurecedores", color: "#6C757D" },
+    { id: "otros", nombre: "Otros", color: "#B8B8B8" }
   ];
   var ZONAS = ["Envío nacional", "CABA", "GBA", "Interior"];
 
@@ -23,7 +23,7 @@
   var estado = {
     pantalla: "inicio",
     busqueda: "",
-    filtros: { categorias: [], precioMin: null, precioMax: null, zona: "" },
+    filtros: { categorias: [], zona: "" },
     filtrosBorrador: null,
     orden: "none", // "none" | "asc"
     confirmarAccion: null
@@ -62,6 +62,7 @@
   }
 
   function formatearPrecio(n) {
+    if (!n || n <= 0) return "Consultar precio";
     try {
       return n.toLocaleString("es-AR", { style: "currency", currency: "ARS", maximumFractionDigits: 0 });
     } catch (e) { return "$" + n; }
@@ -120,7 +121,7 @@
     if (estado.pantalla === "inicio") el.innerHTML = vistaInicio();
     else if (estado.pantalla === "buscar") el.innerHTML = vistaBuscar();
     else if (estado.pantalla === "favoritos") el.innerHTML = vistaFavoritos();
-    else if (estado.pantalla === "tips") el.innerHTML = vistaTips();
+    else if (estado.pantalla === "configuracion") el.innerHTML = vistaConfiguracion();
     ligarEventosPantalla();
   }
 
@@ -160,8 +161,7 @@
     var f = estado.filtros;
     var n = 0;
     if (f.categorias.length) n += 1;
-    if (f.precioMin != null || f.precioMax != null) n += 1;
-    if (f.zona) n += 1;
+        if (f.zona) n += 1;
     return n;
   }
 
@@ -171,8 +171,6 @@
     var lista = window.PROVEEDORES.filter(function (p) {
       if (texto && p.nombre.toLowerCase().indexOf(texto) === -1 && p.categoria.toLowerCase().indexOf(texto) === -1) return false;
       if (f.categorias.length && f.categorias.indexOf(p.categoria) === -1) return false;
-      if (f.precioMin != null && p.precio < f.precioMin) return false;
-      if (f.precioMax != null && p.precio > f.precioMax) return false;
       if (f.zona && p.ubicacion !== f.zona) return false;
       return true;
     });
@@ -186,9 +184,6 @@
     f.categorias.forEach(function (c) {
       chips.push('<button class="chip-removible" data-quitar-cat="' + c + '">' + categoriaInfo(c).nombre + ' ✕</button>');
     });
-    if (f.precioMin != null || f.precioMax != null) {
-      chips.push('<button class="chip-removible" data-quitar="precio">$' + (f.precioMin || 0) + '–$' + (f.precioMax || "∞") + ' ✕</button>');
-    }
     if (f.zona) {
       chips.push('<button class="chip-removible" data-quitar="zona">' + f.zona + ' ✕</button>');
     }
@@ -226,6 +221,7 @@
   function tarjetaProveedorHtml(p) {
     var cat = categoriaInfo(p.categoria);
     var fav = esFavorito(p.id);
+    var esEnvioNacional = p.ubicacion === "Envío nacional";
     return (
       '<div class="proveedor-card">' +
         '<div class="proveedor-dot" style="background:' + cat.color + '"></div>' +
@@ -237,10 +233,12 @@
             '</div>' +
             '<div class="proveedor-precio">' + formatearPrecio(p.precio) + '<div class="proveedor-unidad">' + p.unidad + '</div></div>' +
           '</div>' +
+          (esEnvioNacional ? '<span class="envio-nacional-badge">🚚 Envío nacional</span>' : '') +
           '<div class="proveedor-ubi">📍 ' + p.ubicacion + '</div>' +
           (p.notas ? '<div class="proveedor-notas">' + escapeHtml(p.notas) + '</div>' : '') +
+          '<div class="proveedor-fecha">Actualizado: ' + formatearFecha(p.ultimaActualizacion) + '</div>' +
           '<div class="proveedor-acciones">' +
-            '<a class="btn-ver" href="' + p.enlace + '" target="_blank" rel="noopener">Ver proveedor</a>' +
+            '<a class="btn-ver" href="' + p.enlace + '" target="_blank" rel="noopener">🛒 Ver tienda</a>' +
             '<button class="btn-favorito' + (fav ? ' activo' : '') + '" data-fav="' + p.id + '" aria-label="Guardar en favoritos">' + (fav ? '♥' : '♡') + '</button>' +
           '</div>' +
         '</div>' +
@@ -262,20 +260,24 @@
     return lista.map(tarjetaProveedorHtml).join("");
   }
 
-  /* ---------------- Vista: Tips ---------------- */
-  function vistaTips() {
-    var grupos = [];
-    window.TIPS.forEach(function (t) {
-      if (grupos.indexOf(t.grupo) === -1) grupos.push(t.grupo);
-    });
-    var html = '<p class="frase-inicio">Consejos prácticos para ahorrar en tus insumos.</p>';
-    grupos.forEach(function (g) {
-      html += '<div class="tips-grupo-titulo">' + g + '</div>';
-      window.TIPS.filter(function (t) { return t.grupo === g; }).forEach(function (t) {
-        html += '<div class="tip-card"><h3>' + escapeHtml(t.titulo) + '</h3><p>' + escapeHtml(t.texto) + '</p></div>';
-      });
-    });
-    return html;
+  /* ---------------- Vista: Configuración ---------------- */
+  function vistaConfiguracion() {
+    var perfil = cargarPerfil() || { nombre: "" };
+    return (
+      '<div class="config-seccion">' +
+        '<h3>Tu perfil</h3>' +
+        '<label class="campo">' +
+          '<span>Tu nombre</span>' +
+          '<input type="text" id="config-nombre-usuario" value="' + escapeHtml(perfil.nombre || "") + '">' +
+        '</label>' +
+        '<button class="btn-principal ancho-completo" id="btn-guardar-config">Guardar cambios</button>' +
+      '</div>' +
+      '<div class="config-seccion">' +
+        '<h3>Datos</h3>' +
+        '<button class="btn-peligro ancho-completo" id="btn-borrar-favoritos">Borrar todos los favoritos</button>' +
+      '</div>' +
+      '<p class="texto-legal">Insumos para Velas de Soja es una guía informativa de proveedores. No participamos en las transacciones ni garantizamos precios, stock o calidad de los productos de terceros.</p>'
+    );
   }
 
   /* ---------------- Modal de filtros ---------------- */
@@ -302,13 +304,6 @@
         '<div class="chips-multi">' + catsHtml + '</div>' +
       '</div>' +
       '<div class="filtro-grupo">' +
-        '<h3>Rango de precio</h3>' +
-        '<div class="rango-precio">' +
-          '<input type="number" inputmode="numeric" id="filtro-precio-min" placeholder="Mínimo" value="' + (fb.precioMin != null ? fb.precioMin : "") + '">' +
-          '<input type="number" inputmode="numeric" id="filtro-precio-max" placeholder="Máximo" value="' + (fb.precioMax != null ? fb.precioMax : "") + '">' +
-        '</div>' +
-      '</div>' +
-      '<div class="filtro-grupo">' +
         '<h3>Ubicación / zona</h3>' +
         '<div class="chips-multi">' + zonasHtml + '</div>' +
       '</div>';
@@ -328,12 +323,6 @@
         renderModalFiltros();
       });
     });
-    $("#filtro-precio-min").addEventListener("input", function (e) {
-      fb.precioMin = e.target.value === "" ? null : Number(e.target.value);
-    });
-    $("#filtro-precio-max").addEventListener("input", function (e) {
-      fb.precioMax = e.target.value === "" ? null : Number(e.target.value);
-    });
   }
 
   /* ---------------- Helpers texto ---------------- */
@@ -348,7 +337,7 @@
   function ligarEventosPantalla() {
     $all("[data-ir-categoria]").forEach(function (btn) {
       btn.addEventListener("click", function () {
-        estado.filtros = { categorias: [btn.dataset.irCategoria], precioMin: null, precioMax: null, zona: "" };
+        estado.filtros = { categorias: [btn.dataset.irCategoria], zona: "" };
         irAPantalla("buscar");
       });
     });
@@ -380,11 +369,6 @@
         renderPantalla();
       });
     });
-    var quitarPrecio = $("[data-quitar='precio']");
-    if (quitarPrecio) quitarPrecio.addEventListener("click", function () {
-      estado.filtros.precioMin = null; estado.filtros.precioMax = null;
-      renderPantalla();
-    });
     var quitarZona = $("[data-quitar='zona']");
     if (quitarZona) quitarZona.addEventListener("click", function () {
       estado.filtros.zona = "";
@@ -400,6 +384,22 @@
 
     var btnIrBuscar = $("#btn-ir-buscar");
     if (btnIrBuscar) btnIrBuscar.addEventListener("click", function () { irAPantalla("buscar"); });
+
+    var btnGuardarConfig = $("#btn-guardar-config");
+    if (btnGuardarConfig) btnGuardarConfig.addEventListener("click", function () {
+      var nombre = $("#config-nombre-usuario").value.trim();
+      guardarPerfil({ nombre: nombre });
+      mostrarToast("Datos guardados.");
+      renderPantalla();
+    });
+    var btnBorrarFavoritos = $("#btn-borrar-favoritos");
+    if (btnBorrarFavoritos) btnBorrarFavoritos.addEventListener("click", function () {
+      pedirConfirmacion("Esta acción eliminará todos tus favoritos guardados y no podrá deshacerse.", function () {
+        guardarFavoritos([]);
+        mostrarToast("Favoritos eliminados.");
+        renderPantalla();
+      });
+    });
   }
 
   /* ---------------- Eventos globales ---------------- */
@@ -413,34 +413,13 @@
     });
 
     $("#btn-limpiar-filtros").addEventListener("click", function () {
-      estado.filtrosBorrador = { categorias: [], precioMin: null, precioMax: null, zona: "" };
+      estado.filtrosBorrador = { categorias: [], zona: "" };
       renderModalFiltros();
     });
     $("#btn-aplicar-filtros").addEventListener("click", function () {
       estado.filtros = estado.filtrosBorrador;
       cerrarModal("modal-filtros");
       renderPantalla();
-    });
-
-    $("#btn-abrir-config").addEventListener("click", function () {
-      var perfil = cargarPerfil() || { nombre: "" };
-      $("#config-nombre-usuario").value = perfil.nombre || "";
-      abrirModal("modal-config");
-    });
-    $("#btn-guardar-config").addEventListener("click", function () {
-      var nombre = $("#config-nombre-usuario").value.trim();
-      guardarPerfil({ nombre: nombre });
-      cerrarModal("modal-config");
-      mostrarToast("Datos guardados.");
-      renderPantalla();
-    });
-    $("#btn-borrar-favoritos").addEventListener("click", function () {
-      pedirConfirmacion("Esta acción eliminará todos tus favoritos guardados y no podrá deshacerse.", function () {
-        guardarFavoritos([]);
-        cerrarModal("modal-config");
-        mostrarToast("Favoritos eliminados.");
-        renderPantalla();
-      });
     });
 
     $("#btn-confirmar-cancelar").addEventListener("click", function () {

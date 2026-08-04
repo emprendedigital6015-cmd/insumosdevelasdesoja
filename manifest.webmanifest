@@ -1,12 +1,12 @@
 {
   "name": "Insumos para Velas de Soja",
-  "short_name": "Insumos Velas",
+  "short_name": "Insumos Vela",
   "description": "Encontrá, comparés y guardá tus proveedores de insumos para velas de soja.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#F8F6F2",
-  "theme_color": "#F8F6F2",
+  "background_color": "#FFF8F2",
+  "theme_color": "#FFF8F2",
   "lang": "es-AR",
   "icons": [
     { "src": "./icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
