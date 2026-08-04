@@ -16,8 +16,9 @@ cada proveedor.
 - **Proveedores destacados:** carrusel horizontal en la pantalla de Inicio.
 - **Tarjetas de proveedor:** avatar circular con iniciales, insignia "Envío a todo el país",
   botón de favorito (corazón) y botón de carrito que abre la tienda.
-- **Filtros:** desplegables tipo píldora (Categoría, Zona, Ordenar por precio) siempre visibles
-  arriba de los resultados.
+- **Filtros:** desplegables tipo píldora (Categoría, Zona) siempre visibles arriba de los
+  resultados. Ya no incluye ordenar por precio.
+- **Precios:** todos se muestran como "Consultar" — la app no publica montos.
 - **Pantalla de detalle:** nueva — al tocar una tarjeta se abre la ficha del proveedor con
   "Sobre el proveedor", contacto (sitio web o Instagram) y botón "Visitar tienda".
 - **Favoritos vacío:** ilustración de canasta con destellos.

@@ -31,7 +31,6 @@
     busqueda: "",
     filtroCategoria: "",
     filtroZona: "",
-    orden: "relevancia", // "relevancia" | "asc" | "desc"
     detalleId: null,
     confirmarAccion: null
   };
@@ -68,11 +67,8 @@
     guardarFavoritos(favs);
   }
 
-  function formatearPrecio(n) {
-    if (!n || n <= 0) return "Consultar";
-    try {
-      return n.toLocaleString("es-AR", { style: "currency", currency: "ARS", maximumFractionDigits: 0 });
-    } catch (e) { return "$" + n; }
+  function formatearPrecio() {
+    return "Consultar";
   }
 
   function formatearFecha(iso) {
@@ -313,7 +309,7 @@
         '<span class="mini-avatar" style="background:' + hexConAlpha(cat.color, "26") + ';color:' + cat.color + '">' + iniciales(grupo.nombreNegocio) + '</span>' +
         '<span class="mini-nombre">' + escapeHtml(grupo.nombreNegocio) + '</span>' +
         '<span class="mini-cat">' + textoCategoriasGrupo(grupo, 2) + '</span>' +
-        '<span class="mini-precio">' + formatearPrecio(grupo.precio) + '</span>' +
+        '<span class="mini-precio">' + formatearPrecio() + '</span>' +
       '</button>'
     );
   }
@@ -328,8 +324,6 @@
       return true;
     });
     var grupos = agruparEntradas(entradas);
-    if (estado.orden === "asc") grupos = grupos.slice().sort(function (a, b) { return (a.precio || Infinity) - (b.precio || Infinity); });
-    if (estado.orden === "desc") grupos = grupos.slice().sort(function (a, b) { return (b.precio || 0) - (a.precio || 0); });
     return grupos;
   }
 
@@ -347,10 +341,9 @@
     var lista = proveedoresFiltrados();
 
     var catOpciones = CATEGORIAS.map(function (c) { return { value: c.id, label: c.emoji + " " + c.nombre }; });
-    var ordenOpciones = [
-      { value: "asc", label: "Menor precio" },
-      { value: "desc", label: "Mayor precio" }
-    ];
+    var zonaOpciones = ZONAS.map(function (z) {
+      return { value: z, label: z === "Interior" ? "Interior de País" : z };
+    });
 
     var listaHtml;
     if (lista.length === 0) {
@@ -369,8 +362,7 @@
       '</div>' +
       '<div class="pills-row">' +
         selectPillHtml("select-categoria", catOpciones, estado.filtroCategoria, "Categoría") +
-        selectPillHtml("select-zona", ZONAS, estado.filtroZona, "Zona") +
-        selectPillHtml("select-orden", ordenOpciones, estado.orden === "relevancia" ? "" : estado.orden, "Ordenar: Precio") +
+        selectPillHtml("select-zona", zonaOpciones, estado.filtroZona, "Zona") +
       '</div>' +
       '<div class="barra-resultados">' +
         '<span>' + lista.length + ' proveedor' + (lista.length === 1 ? '' : 'es') + ' encontrado' + (lista.length === 1 ? '' : 's') + '</span>' +
@@ -398,7 +390,7 @@
             (grupo.envioNacional ? '<span class="envio-nacional-badge">🚚 Envío a todo el país</span>' : '') +
           '</div>' +
           '<div class="proveedor-bottom">' +
-            '<span class="proveedor-precio">' + formatearPrecio(grupo.precio) + (grupo.precio ? '<span class="proveedor-unidad-inline"> / ' + grupo.unidad + '</span>' : '') + '</span>' +
+            '<span class="proveedor-precio">' + formatearPrecio() + '</span>' +
             '<a class="btn-carrito" href="' + grupo.enlace + '" target="_blank" rel="noopener" aria-label="Ver tienda de ' + escapeHtml(grupo.nombreNegocio) + '" data-stop-propagation="1">🛒</a>' +
           '</div>' +
         '</div>' +
@@ -425,7 +417,7 @@
       return (
         '<a class="detalle-oferta-fila" href="' + e.enlace + '" target="_blank" rel="noopener">' +
           '<span class="detalle-oferta-cat"><span>' + cat.emoji + '</span> ' + cat.nombre + '</span>' +
-          '<span class="detalle-oferta-precio">' + formatearPrecio(e.precio) + (e.precio ? ' <small>/ ' + e.unidad + '</small>' : '') + '</span>' +
+          '<span class="detalle-oferta-precio">' + formatearPrecio() + '</span>' +
         '</a>'
       );
     }).join("");
@@ -557,11 +549,6 @@
     var selectZona = $("#select-zona");
     if (selectZona) selectZona.addEventListener("change", function (e) {
       estado.filtroZona = e.target.value;
-      renderPantalla();
-    });
-    var selectOrden = $("#select-orden");
-    if (selectOrden) selectOrden.addEventListener("change", function (e) {
-      estado.orden = e.target.value || "relevancia";
       renderPantalla();
     });
 
