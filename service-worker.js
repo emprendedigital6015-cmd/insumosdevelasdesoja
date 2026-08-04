@@ -1,4 +1,4 @@
-var CACHE_NAME = "insumos-vela-cache-v2";
+var CACHE_NAME = "velas-cache-v4";
 var ARCHIVOS_ESENCIALES = [
   "./",
   "./index.html",

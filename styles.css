@@ -2,21 +2,23 @@
   --bg: #FFF8F2;
   --bg-destacado: #FFF1E6;
   --card: #FFFFFF;
-  --ink: #2F3542;
-  --ink-soft: #6C757D;
-  --coral: #FF7F50;
-  --coral-soft: #FFE4D6;
-  --turquesa: #4ECDC4;
-  --turquesa-soft: #DFF7F5;
-  --mostaza: #F4B942;
+  --ink: #243B53;
+  --ink-soft: #6B7280;
+  --coral: #FF6B6B;
+  --coral-soft: #FFE1E1;
+  --turquesa: #2EC4B6;
+  --turquesa-soft: #DBF5F2;
+  --mostaza: #FFC857;
   --mostaza-dark: #B8860B;
-  --mostaza-soft: #FDF0D5;
-  --rosa: #FF5D8F;
-  --rosa-soft: #FFE3EC;
-  --linea: #EAEAEA;
+  --mostaza-soft: #FFF3DA;
+  --fucsia: #FF4D8D;
+  --fucsia-soft: #FFE0EC;
+  --exito: #4CAF50;
+  --alerta: #FF9F1C;
+  --linea: #E9ECEF;
   --radio: 16px;
   --radio-chico: 10px;
-  --sombra: 0 2px 10px rgba(47,53,66,0.08);
+  --sombra: 0 2px 10px rgba(36,59,83,0.08);
   --safe-top: env(safe-area-inset-top, 0px);
   --safe-bottom: env(safe-area-inset-bottom, 0px);
 }
@@ -26,7 +28,7 @@ html,body{margin:0;padding:0;}
 body{
   background:var(--bg);
   color:var(--ink);
-  font-family: ui-rounded, "SF Pro Rounded", "Segoe UI Rounded", "Nunito", "Segoe UI", Roboto, sans-serif;
+  font-family: "Poppins", "Inter", "Nunito", ui-rounded, "Segoe UI", Roboto, sans-serif;
   -webkit-font-smoothing:antialiased;
   min-height:100vh;
 }
@@ -60,8 +62,8 @@ p{margin:0 0 12px 0;color:var(--ink-soft);}
   font-size:15px;
 }
 .btn-peligro{
-  background:#FBEAE5;
-  color:var(--rosa);
+  background:#FFF1DE;
+  color:var(--alerta);
   border:none;
   border-radius:999px;
   min-height:48px;
@@ -297,9 +299,44 @@ main{
   font-size:13px;
   color:var(--ink-soft);
 }
+.barra-resultados-acciones{display:flex;gap:14px;align-items:center;}
 .link-orden{
   background:none;border:none;color:var(--turquesa);font-weight:800;font-size:13px;
 }
+
+/* ---------- Tabla comparativa ---------- */
+.tabla-wrap{
+  overflow-x:auto;
+  background:var(--card);
+  border-radius:var(--radio);
+  box-shadow:var(--sombra);
+  margin-bottom:12px;
+}
+.tabla-comparativa{
+  width:100%;
+  border-collapse:collapse;
+  font-size:13px;
+}
+.tabla-comparativa th{
+  text-align:left;
+  padding:12px 14px;
+  background:var(--bg-destacado);
+  color:var(--ink-soft);
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:.03em;
+  white-space:nowrap;
+}
+.tabla-comparativa td{
+  padding:12px 14px;
+  border-top:1px solid var(--linea);
+  white-space:nowrap;
+}
+.tabla-proveedor{display:flex;align-items:center;gap:8px;font-weight:700;color:var(--ink);}
+.tabla-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.tabla-precio{font-weight:800;color:var(--mostaza-dark);}
+.tabla-accion{text-align:center;font-size:18px;}
+.tabla-accion a{text-decoration:none;}
 
 .proveedor-card{
   background:var(--card);
@@ -335,10 +372,10 @@ main{
   border-radius:999px;
   width:40px;height:40px;
   font-size:17px;
-  color:var(--rosa);
+  color:var(--fucsia);
   flex-shrink:0;
 }
-.btn-favorito.activo{background:#FBEAE5;border-color:#FBEAE5;}
+.btn-favorito.activo{background:var(--fucsia-soft);border-color:var(--fucsia-soft);}
 .btn-ver{
   background:var(--turquesa);
   color:#fff;

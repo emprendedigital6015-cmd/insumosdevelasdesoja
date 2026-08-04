@@ -1,7 +1,7 @@
 {
-  "name": "Insumos para Velas de Soja",
-  "short_name": "Insumos Vela",
-  "description": "Encontrá, comparés y guardá tus proveedores de insumos para velas de soja.",
+  "name": "VELAS",
+  "short_name": "VELAS",
+  "description": "Encontrá proveedores de insumos para velas, comparé precios y elegí la mejor opción desde una única aplicación.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",

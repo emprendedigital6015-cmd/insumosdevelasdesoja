@@ -3,14 +3,14 @@
 
   /* ---------------- Constantes ---------------- */
   var CATEGORIAS = [
-    { id: "ceras", nombre: "Ceras", color: "#F4B942" },
-    { id: "pabilos", nombre: "Pabilos", color: "#4ECDC4" },
-    { id: "fragancias", nombre: "Fragancias", color: "#FF7F50" },
-    { id: "colorantes", nombre: "Colorantes", color: "#A66CFF" },
-    { id: "moldes", nombre: "Moldes", color: "#5BC0EB" },
-    { id: "recipientes", nombre: "Recipientes", color: "#95D5B2" },
-    { id: "endurecedores", nombre: "Endurecedores", color: "#6C757D" },
-    { id: "otros", nombre: "Otros", color: "#B8B8B8" }
+    { id: "ceras", nombre: "🕯️ Ceras", color: "#FFC857" },
+    { id: "pabilos", nombre: "🧵 Pabilos", color: "#2EC4B6" },
+    { id: "fragancias", nombre: "🌸 Fragancias", color: "#FF6B6B" },
+    { id: "colorantes", nombre: "🎨 Colorantes", color: "#9B5DE5" },
+    { id: "moldes", nombre: "🧱 Moldes", color: "#3A86FF" },
+    { id: "recipientes", nombre: "🥛 Recipientes", color: "#7BD389" },
+    { id: "endurecedores", nombre: "⚪ Endurecedores", color: "#6C757D" },
+    { id: "otros", nombre: "📦 Otros", color: "#B8B8B8" }
   ];
   var ZONAS = ["Envío nacional", "CABA", "GBA", "Interior"];
 
@@ -26,6 +26,7 @@
     filtros: { categorias: [], zona: "" },
     filtrosBorrador: null,
     orden: "none", // "none" | "asc"
+    vista: "tarjetas", // "tarjetas" | "tabla"
     confirmarAccion: null
   };
 
@@ -200,6 +201,8 @@
         '<div class="estado-vacio-icono">🔎</div>' +
         '<p>No encontramos proveedores con ese filtro. Probá con otra categoría o búsqueda.</p>' +
         '</div>';
+    } else if (estado.vista === "tabla") {
+      listaHtml = tablaProveedoresHtml(lista);
     } else {
       listaHtml = lista.map(tarjetaProveedorHtml).join("");
     }
@@ -212,9 +215,38 @@
       (count ? '<div class="chips-row">' + chipsRemoviblesHtml() + '</div>' : '') +
       '<div class="barra-resultados">' +
         '<span>' + lista.length + ' resultado' + (lista.length === 1 ? '' : 's') + '</span>' +
-        '<button class="link-orden" id="btn-ordenar">' + (estado.orden === "asc" ? "✓ Menor precio" : "Ordenar por precio") + '</button>' +
+        '<span class="barra-resultados-acciones">' +
+          '<button class="link-orden" id="btn-ordenar">' + (estado.orden === "asc" ? "✓ Menor precio" : "Ordenar por precio") + '</button>' +
+          '<button class="link-orden" id="btn-cambiar-vista">' + (estado.vista === "tabla" ? "🗂️ Tarjetas" : "📊 Tabla") + '</button>' +
+        '</span>' +
       '</div>' +
       listaHtml
+    );
+  }
+
+  function tablaProveedoresHtml(lista) {
+    var filas = lista.map(function (p) {
+      var esEnvioNacional = p.ubicacion === "Envío nacional";
+      return (
+        '<tr>' +
+          '<td class="tabla-proveedor">' +
+            '<span class="tabla-dot" style="background:' + categoriaInfo(p.categoria).color + '"></span>' +
+            escapeHtml(p.nombre) +
+          '</td>' +
+          '<td class="tabla-precio">' + formatearPrecio(p.precio) + '</td>' +
+          '<td>' + (esEnvioNacional ? '🚚 Nacional' : p.ubicacion) + '</td>' +
+          '<td class="tabla-accion"><a href="' + p.enlace + '" target="_blank" rel="noopener" aria-label="Ver tienda de ' + escapeHtml(p.nombre) + '">🛒</a></td>' +
+        '</tr>'
+      );
+    }).join("");
+
+    return (
+      '<div class="tabla-wrap">' +
+        '<table class="tabla-comparativa">' +
+          '<thead><tr><th>Proveedor</th><th>Precio</th><th>Ubicación</th><th>Ver tienda</th></tr></thead>' +
+          '<tbody>' + filas + '</tbody>' +
+        '</table>' +
+      '</div>'
     );
   }
 
@@ -276,7 +308,7 @@
         '<h3>Datos</h3>' +
         '<button class="btn-peligro ancho-completo" id="btn-borrar-favoritos">Borrar todos los favoritos</button>' +
       '</div>' +
-      '<p class="texto-legal">Insumos para Velas de Soja es una guía informativa de proveedores. No participamos en las transacciones ni garantizamos precios, stock o calidad de los productos de terceros.</p>'
+      '<p class="texto-legal">VELAS es una guía informativa de proveedores. No participamos en las transacciones ni garantizamos precios, stock o calidad de los productos de terceros.</p>'
     );
   }
 
@@ -359,6 +391,12 @@
     var btnOrdenar = $("#btn-ordenar");
     if (btnOrdenar) btnOrdenar.addEventListener("click", function () {
       estado.orden = estado.orden === "asc" ? "none" : "asc";
+      renderPantalla();
+    });
+
+    var btnCambiarVista = $("#btn-cambiar-vista");
+    if (btnCambiarVista) btnCambiarVista.addEventListener("click", function () {
+      estado.vista = estado.vista === "tabla" ? "tarjetas" : "tabla";
       renderPantalla();
     });
 
