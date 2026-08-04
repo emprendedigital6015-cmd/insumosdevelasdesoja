@@ -19,6 +19,8 @@ window.PROVEEDORES = [
   },
   {
     id: "p002",
+    negocio: "insumos-oeste",
+    nombreNegocio: "Insumos Oeste",
     nombre: "Insumos Oeste",
     categoria: "ceras",
     precio: 0,
@@ -52,6 +54,8 @@ window.PROVEEDORES = [
   },
   {
     id: "p005",
+    negocio: "aupar",
+    nombreNegocio: "AUPAR S.R.L. — La Esquina Rosa",
     nombre: "AUPAR SRL (La Esquina Rosa)",
     categoria: "ceras",
     precio: 0,
@@ -63,6 +67,8 @@ window.PROVEEDORES = [
   },
   {
     id: "p006",
+    negocio: "casa-allegra",
+    nombreNegocio: "Casa Allegra",
     nombre: "Casa Allegra",
     categoria: "fragancias",
     precio: 0,
@@ -74,6 +80,8 @@ window.PROVEEDORES = [
   },
   {
     id: "p007",
+    negocio: "casa-allegra",
+    nombreNegocio: "Casa Allegra",
     nombre: "Casa Allegra (pabilos)",
     categoria: "pabilos",
     precio: 0,
@@ -85,6 +93,8 @@ window.PROVEEDORES = [
   },
   {
     id: "p008",
+    negocio: "insumos-oeste",
+    nombreNegocio: "Insumos Oeste",
     nombre: "Insumos Oeste (moldes)",
     categoria: "moldes",
     precio: 0,
@@ -140,6 +150,8 @@ window.PROVEEDORES = [
   },
   {
     id: "p013",
+    negocio: "tia-robertina",
+    nombreNegocio: "Tía Robertina",
     nombre: "Tía Robertina",
     categoria: "ceras",
     precio: 0,
@@ -206,6 +218,8 @@ window.PROVEEDORES = [
   },
   {
     id: "p020",
+    negocio: "deepa",
+    nombreNegocio: "Deepa Insumos",
     nombre: "Deepa Insumos",
     categoria: "ceras",
     precio: 11540,
@@ -217,6 +231,8 @@ window.PROVEEDORES = [
   },
   {
     id: "p021",
+    negocio: "deepa",
+    nombreNegocio: "Deepa Insumos",
     nombre: "Deepa Insumos (pabilos)",
     categoria: "pabilos",
     precio: 1000,
@@ -228,6 +244,8 @@ window.PROVEEDORES = [
   },
   {
     id: "p022",
+    negocio: "deepa",
+    nombreNegocio: "Deepa Insumos",
     nombre: "Deepa Insumos (esencias)",
     categoria: "fragancias",
     precio: 9300,
@@ -239,6 +257,8 @@ window.PROVEEDORES = [
   },
   {
     id: "p023",
+    negocio: "deepa",
+    nombreNegocio: "Deepa Insumos",
     nombre: "Deepa Insumos (colorantes)",
     categoria: "colorantes",
     precio: 2430,
@@ -250,6 +270,8 @@ window.PROVEEDORES = [
   },
   {
     id: "p024",
+    negocio: "deepa",
+    nombreNegocio: "Deepa Insumos",
     nombre: "Deepa Insumos (moldes)",
     categoria: "moldes",
     precio: 7900,
@@ -261,6 +283,8 @@ window.PROVEEDORES = [
   },
   {
     id: "p025",
+    negocio: "deepa",
+    nombreNegocio: "Deepa Insumos",
     nombre: "Deepa Insumos (recipientes)",
     categoria: "recipientes",
     precio: 1900,
@@ -272,6 +296,8 @@ window.PROVEEDORES = [
   },
   {
     id: "p026",
+    negocio: "mundo-rocco",
+    nombreNegocio: "Mundo Rocco Home",
     nombre: "Mundo Rocco Home (recipientes)",
     categoria: "recipientes",
     precio: 3290,
@@ -283,6 +309,8 @@ window.PROVEEDORES = [
   },
   {
     id: "p027",
+    negocio: "mundo-rocco",
+    nombreNegocio: "Mundo Rocco Home",
     nombre: "Mundo Rocco Home (esencias)",
     categoria: "fragancias",
     precio: 6645,
@@ -294,6 +322,8 @@ window.PROVEEDORES = [
   },
   {
     id: "p028",
+    negocio: "mundo-rocco",
+    nombreNegocio: "Mundo Rocco Home",
     nombre: "Mundo Rocco Home (pabilos)",
     categoria: "pabilos",
     precio: 1110,
@@ -305,6 +335,8 @@ window.PROVEEDORES = [
   },
   {
     id: "p029",
+    negocio: "mundo-rocco",
+    nombreNegocio: "Mundo Rocco Home",
     nombre: "Mundo Rocco Home (moldes)",
     categoria: "moldes",
     precio: 8900,
@@ -316,6 +348,8 @@ window.PROVEEDORES = [
   },
   {
     id: "p030",
+    negocio: "mundo-rocco",
+    nombreNegocio: "Mundo Rocco Home",
     nombre: "Mundo Rocco Home (accesorios)",
     categoria: "otros",
     precio: 10990,
@@ -327,6 +361,8 @@ window.PROVEEDORES = [
   },
   {
     id: "p031",
+    negocio: "tia-robertina",
+    nombreNegocio: "Tía Robertina",
     nombre: "Tía Robertina (sitio oficial)",
     categoria: "pabilos",
     precio: 0,
@@ -338,6 +374,8 @@ window.PROVEEDORES = [
   },
   {
     id: "p032",
+    negocio: "tia-robertina",
+    nombreNegocio: "Tía Robertina",
     nombre: "Tía Robertina (colorantes)",
     categoria: "colorantes",
     precio: 0,
@@ -349,6 +387,8 @@ window.PROVEEDORES = [
   },
   {
     id: "p033",
+    negocio: "aupar",
+    nombreNegocio: "AUPAR S.R.L. — La Esquina Rosa",
     nombre: "AUPAR S.R.L. - La Esquina Rosa",
     categoria: "ceras",
     precio: 7664,
@@ -360,6 +400,8 @@ window.PROVEEDORES = [
   },
   {
     id: "p034",
+    negocio: "aupar",
+    nombreNegocio: "AUPAR S.R.L. — La Esquina Rosa",
     nombre: "AUPAR (pabilos y colorantes)",
     categoria: "pabilos",
     precio: 6047,

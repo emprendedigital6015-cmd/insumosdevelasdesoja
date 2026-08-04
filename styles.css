@@ -34,9 +34,10 @@ body{
 }
 .oculto{display:none !important;}
 button{font-family:inherit;cursor:pointer;}
-input{font-family:inherit;}
+input,select{font-family:inherit;}
 h1,h2,h3{margin:0 0 8px 0;line-height:1.2;}
 p{margin:0 0 12px 0;color:var(--ink-soft);}
+a{color:inherit;}
 
 /* ---------- Botones ---------- */
 .btn-principal{
@@ -49,6 +50,10 @@ p{margin:0 0 12px 0;color:var(--ink-soft);}
   font-weight:700;
   font-size:16px;
   box-shadow:var(--sombra);
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
 }
 .btn-principal:active{transform:scale(0.98);}
 .btn-secundario{
@@ -60,6 +65,17 @@ p{margin:0 0 12px 0;color:var(--ink-soft);}
   padding:0 20px;
   font-weight:700;
   font-size:15px;
+}
+.btn-secundario-turquesa{
+  background:var(--turquesa);
+  color:#fff;
+  border:none;
+  border-radius:999px;
+  min-height:48px;
+  padding:0 26px;
+  font-weight:700;
+  font-size:15px;
+  box-shadow:var(--sombra);
 }
 .btn-peligro{
   background:#FFF1DE;
@@ -88,7 +104,7 @@ p{margin:0 0 12px 0;color:var(--ink-soft);}
   width:100%;
   text-align:center;
 }
-.logo-llama{margin-bottom:16px;}
+.logo-llama{margin-bottom:16px;display:flex;justify-content:center;}
 .campo{
   display:block;
   text-align:left;
@@ -116,32 +132,46 @@ p{margin:0 0 12px 0;color:var(--ink-soft);}
   outline-offset:1px;
 }
 
-/* ---------- Header ---------- */
+/* ---------- Header dinámico ---------- */
 .app-header{
   position:sticky;
   top:0;
   z-index:5;
   background:var(--bg);
-  padding:calc(14px + var(--safe-top)) 20px 14px;
+  padding:calc(14px + var(--safe-top)) 16px 14px;
   display:flex;
   align-items:center;
   justify-content:space-between;
   border-bottom:1px solid var(--linea);
+  gap:10px;
 }
 .header-titulo{
   display:flex;
   align-items:center;
   gap:8px;
   font-weight:800;
-  font-size:19px;
+  font-size:20px;
 }
-.btn-config{
+.header-titulo-texto{
+  font-weight:800;
+  font-size:18px;
+  flex:1;
+  text-align:center;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.btn-icono-header{
   background:none;
   border:none;
   font-size:20px;
-  color:var(--ink-soft);
+  color:var(--ink);
   padding:6px;
+  min-width:36px;
+  flex-shrink:0;
 }
+.btn-icono-header.activo-fav{color:var(--fucsia);}
+.btn-icono-header-spacer{min-width:36px;}
 
 main{
   padding:16px 16px calc(96px + var(--safe-bottom));
@@ -163,181 +193,159 @@ main{
   flex:1;
   background:none;
   border:none;
+  border-top:3px solid transparent;
   display:flex;
   flex-direction:column;
   align-items:center;
   gap:2px;
-  padding:10px 4px 8px;
+  padding:8px 4px 8px;
   color:var(--ink-soft);
   font-size:11px;
   font-weight:700;
 }
 .nav-icono{font-size:20px;}
-.nav-item.activo{color:var(--coral);}
-
-/* ---------- Tarjetas genéricas ---------- */
-.tarjeta{
-  background:var(--card);
-  border-radius:var(--radio);
-  box-shadow:var(--sombra);
-  padding:16px;
-  margin-bottom:12px;
-}
-.eyebrow{
-  font-size:12px;
-  font-weight:800;
-  letter-spacing:.03em;
-  text-transform:uppercase;
-  color:var(--turquesa);
-}
+.nav-item.activo{color:var(--coral);border-top-color:var(--coral);}
 
 /* ---------- Inicio ---------- */
-.saludo{font-size:22px;font-weight:800;margin-bottom:2px;}
-.fecha-hoy{color:var(--ink-soft);font-size:14px;margin-bottom:2px;}
-.frase-inicio{margin-bottom:18px;}
+.saludo{font-size:22px;font-weight:800;margin-bottom:4px;}
+.frase-inicio{margin-bottom:16px;}
 
-.categorias-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:10px;
-  margin-bottom:20px;
-}
-.categoria-card{
-  background:var(--card);
-  border:none;
-  border-radius:var(--radio);
-  box-shadow:var(--sombra);
-  padding:16px 12px;
-  text-align:left;
-  display:flex;
-  flex-direction:column;
-  gap:8px;
-}
-.categoria-dot{
-  width:12px;height:12px;border-radius:50%;
-}
-.categoria-nombre{font-weight:800;font-size:14px;}
-
-.actualizado-nota{
-  font-size:12px;
-  color:var(--ink-soft);
-  margin:4px 0 16px;
-}
-
-/* ---------- Buscar ---------- */
 .buscador-wrap{
   display:flex;
   gap:8px;
-  margin-bottom:12px;
+  margin-bottom:18px;
 }
 .buscador-wrap input{
   flex:1;
   min-height:48px;
   border-radius:999px;
   border:1px solid var(--linea);
-  padding:0 16px;
+  padding:0 18px;
   font-size:15px;
   background:#fff;
 }
-.btn-filtros{
+.btn-buscar-icono{
   min-height:48px;
   min-width:48px;
   border-radius:999px;
-  background:var(--turquesa);
-  color:#fff;
-  border:none;
-  font-size:14px;
-  font-weight:700;
-  padding:0 16px;
-  display:flex;
-  align-items:center;
-  gap:6px;
-  position:relative;
-}
-.badge-filtros{
   background:var(--coral);
   color:#fff;
-  border-radius:999px;
-  font-size:11px;
-  padding:1px 7px;
+  border:none;
+  font-size:17px;
+  box-shadow:var(--sombra);
 }
 
-.chips-row{
-  display:flex;
-  flex-wrap:wrap;
-  gap:8px;
-  margin-bottom:12px;
+.categorias-grid-circ{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px 6px;
+  margin-bottom:24px;
 }
-.chip{
-  background:var(--coral-soft);
-  color:var(--ink);
+.cat-circulo-item{
+  background:none;
   border:none;
-  border-radius:999px;
-  padding:8px 14px;
-  font-size:13px;
-  font-weight:700;
-}
-.chip.activo{background:var(--coral);color:#fff;}
-.chip-removible{
-  display:inline-flex;
+  display:flex;
+  flex-direction:column;
   align-items:center;
   gap:6px;
-  background:var(--turquesa-soft);
-  color:var(--turquesa);
-  border-radius:999px;
-  padding:6px 10px 6px 14px;
-  font-size:13px;
-  font-weight:700;
-  border:none;
 }
+.cat-circulo{
+  width:56px;
+  height:56px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:24px;
+}
+.cat-circulo-emoji{line-height:1;}
+.cat-circulo-label{font-size:11px;font-weight:700;color:var(--ink);text-align:center;}
 
-.barra-resultados{
+.destacados-header{
   display:flex;
   justify-content:space-between;
   align-items:center;
   margin-bottom:10px;
-  font-size:13px;
-  color:var(--ink-soft);
 }
-.barra-resultados-acciones{display:flex;gap:14px;align-items:center;}
-.link-orden{
-  background:none;border:none;color:var(--turquesa);font-weight:800;font-size:13px;
-}
+.destacados-header h3{margin:0;font-size:16px;}
+.link-ver-todos{background:none;border:none;color:var(--coral);font-weight:800;font-size:13px;}
 
-/* ---------- Tabla comparativa ---------- */
-.tabla-wrap{
+.destacados-scroll{
+  display:flex;
+  gap:12px;
   overflow-x:auto;
+  padding-bottom:6px;
+  margin-bottom:20px;
+  -webkit-overflow-scrolling:touch;
+}
+.mini-card{
   background:var(--card);
+  border:none;
   border-radius:var(--radio);
   box-shadow:var(--sombra);
-  margin-bottom:12px;
-}
-.tabla-comparativa{
-  width:100%;
-  border-collapse:collapse;
-  font-size:13px;
-}
-.tabla-comparativa th{
+  padding:14px;
+  min-width:150px;
+  max-width:150px;
   text-align:left;
-  padding:12px 14px;
-  background:var(--bg-destacado);
-  color:var(--ink-soft);
-  font-size:11px;
-  text-transform:uppercase;
-  letter-spacing:.03em;
-  white-space:nowrap;
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  flex-shrink:0;
 }
-.tabla-comparativa td{
-  padding:12px 14px;
-  border-top:1px solid var(--linea);
-  white-space:nowrap;
+.mini-avatar{
+  width:38px;height:38px;
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-weight:800;font-size:14px;
 }
-.tabla-proveedor{display:flex;align-items:center;gap:8px;font-weight:700;color:var(--ink);}
-.tabla-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
-.tabla-precio{font-weight:800;color:var(--mostaza-dark);}
-.tabla-accion{text-align:center;font-size:18px;}
-.tabla-accion a{text-decoration:none;}
+.mini-nombre{font-weight:800;font-size:13px;line-height:1.25;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+}
+.mini-cat{font-size:11px;color:var(--ink-soft);}
+.mini-precio{font-weight:800;font-size:13px;color:var(--mostaza-dark);}
 
+.actualizacion-card{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  background:var(--bg-destacado);
+  border-radius:var(--radio);
+  padding:14px 16px;
+  margin-bottom:8px;
+}
+.actualizacion-icono{font-size:26px;}
+.actualizacion-titulo{font-size:12px;font-weight:700;color:var(--ink-soft);}
+.actualizacion-fecha{font-size:14px;font-weight:800;}
+
+/* ---------- Buscar: filtros en píldora ---------- */
+.pills-row{
+  display:flex;
+  gap:8px;
+  margin-bottom:14px;
+  overflow-x:auto;
+  padding-bottom:2px;
+}
+.pill-select{
+  appearance:none;
+  -webkit-appearance:none;
+  background:var(--turquesa-soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%232EC4B6'/%3E%3C/svg%3E") no-repeat right 12px center;
+  color:var(--turquesa);
+  border:none;
+  border-radius:999px;
+  padding:10px 30px 10px 16px;
+  font-size:13px;
+  font-weight:700;
+  white-space:nowrap;
+  flex-shrink:0;
+}
+
+.barra-resultados{
+  font-size:13px;
+  color:var(--ink-soft);
+  margin-bottom:10px;
+}
+
+/* ---------- Tarjeta de proveedor ---------- */
 .proveedor-card{
   background:var(--card);
   border-radius:var(--radio);
@@ -346,12 +354,17 @@ main{
   margin-bottom:10px;
   display:flex;
   gap:12px;
+  text-align:left;
+  cursor:pointer;
 }
-.proveedor-dot{
-  width:8px;
-  border-radius:6px;
+.proveedor-avatar{
+  width:44px;height:44px;
+  border-radius:50%;
   flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  font-weight:800;font-size:15px;
 }
+.proveedor-avatar-grande{width:64px;height:64px;font-size:20px;margin-bottom:10px;}
 .proveedor-info{flex:1;min-width:0;}
 .proveedor-top{
   display:flex;
@@ -360,42 +373,59 @@ main{
   gap:8px;
 }
 .proveedor-nombre{font-weight:800;font-size:15px;}
-.proveedor-cat{font-size:12px;color:var(--ink-soft);text-transform:capitalize;margin-bottom:4px;}
-.proveedor-precio{font-weight:800;color:var(--mostaza-dark);font-size:16px;white-space:nowrap;}
-.proveedor-unidad{font-size:11px;color:var(--ink-soft);font-weight:400;}
-.proveedor-ubi{font-size:12px;color:var(--ink-soft);margin:2px 0 6px;}
-.proveedor-notas{font-size:12px;color:var(--ink-soft);margin-bottom:8px;}
-.proveedor-acciones{display:flex;gap:8px;align-items:center;}
-.btn-favorito{
+.proveedor-cat{font-size:12px;color:var(--ink-soft);margin-top:1px;}
+.proveedor-ubi-row{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  flex-wrap:wrap;
+  margin:6px 0;
+}
+.proveedor-ubi{font-size:12px;color:var(--ink-soft);}
+.proveedor-fecha{font-size:11px;color:var(--ink-soft);margin-top:2px;}
+.proveedor-bottom{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-top:6px;
+}
+.proveedor-precio{font-weight:800;color:var(--mostaza-dark);font-size:16px;}
+.proveedor-unidad-inline{font-size:11px;color:var(--ink-soft);font-weight:400;}
+
+.btn-favorito-card{
   background:none;
-  border:1px solid var(--linea);
-  border-radius:999px;
-  width:40px;height:40px;
-  font-size:17px;
+  border:none;
+  font-size:18px;
   color:var(--fucsia);
   flex-shrink:0;
+  padding:2px;
 }
-.btn-favorito.activo{background:var(--fucsia-soft);border-color:var(--fucsia-soft);}
-.btn-ver{
+.btn-carrito{
   background:var(--turquesa);
   color:#fff;
   border:none;
-  border-radius:999px;
-  min-height:40px;
-  padding:0 16px;
-  font-weight:700;
-  font-size:13px;
-  flex:1;
-  text-align:center;
-  text-decoration:none;
+  border-radius:10px;
+  width:38px;height:38px;
+  font-size:16px;
   display:inline-flex;
   align-items:center;
   justify-content:center;
+  text-decoration:none;
+  flex-shrink:0;
 }
 
-.filtro-grupo{margin-bottom:18px;}
-.filtro-grupo h3{font-size:14px;}
-.chips-multi{display:flex;flex-wrap:wrap;gap:8px;}
+.envio-nacional-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:4px;
+  background:var(--turquesa-soft);
+  color:var(--turquesa);
+  font-size:10px;
+  font-weight:800;
+  padding:3px 9px;
+  border-radius:999px;
+  white-space:nowrap;
+}
 
 /* ---------- Estado vacío ---------- */
 .estado-vacio{
@@ -405,23 +435,67 @@ main{
 }
 .estado-vacio-icono{font-size:36px;margin-bottom:10px;}
 
-/* ---------- Favoritos recientes en inicio ---------- */
-.fav-recientes-titulo{font-size:14px;font-weight:800;margin:4px 0 10px;color:var(--turquesa);}
-
-/* ---------- Envío nacional / fecha en tarjeta ---------- */
-.envio-nacional-badge{
-  display:inline-flex;
-  align-items:center;
-  gap:4px;
-  background:var(--turquesa-soft);
-  color:var(--turquesa);
-  font-size:11px;
-  font-weight:800;
-  padding:3px 9px;
-  border-radius:999px;
-  margin-bottom:6px;
+.estado-vacio-favoritos{padding-top:56px;}
+.estado-vacio-icono-grande{
+  font-size:64px;
+  position:relative;
+  display:inline-block;
+  margin-bottom:14px;
 }
-.proveedor-fecha{font-size:11px;color:var(--ink-soft);margin-top:2px;}
+.chispa{position:absolute;color:var(--fucsia);font-size:16px;}
+.chispa-1{top:-4px;right:-14px;}
+.chispa-2{bottom:6px;left:-18px;font-size:11px;color:var(--mostaza);}
+.estado-vacio-favoritos h3{color:var(--ink);font-size:17px;}
+
+/* ---------- Detalle de proveedor ---------- */
+.detalle-card{
+  background:var(--card);
+  border-radius:var(--radio);
+  box-shadow:var(--sombra);
+  padding:24px 16px;
+  text-align:center;
+  margin-bottom:16px;
+}
+.detalle-nombre{font-size:19px;font-weight:800;}
+.detalle-cat{font-size:13px;color:var(--ink-soft);margin-bottom:8px;}
+.detalle-ubi-row{justify-content:center;}
+.detalle-precio{font-size:20px;font-weight:800;color:var(--mostaza-dark);margin-top:8px;}
+.detalle-seccion{
+  background:var(--card);
+  border-radius:var(--radio);
+  box-shadow:var(--sombra);
+  padding:16px;
+  margin-bottom:12px;
+}
+.detalle-seccion h3{font-size:13px;text-transform:uppercase;letter-spacing:.03em;color:var(--ink-soft);}
+.detalle-seccion p{margin:0;font-size:14px;color:var(--ink);}
+.detalle-seccion p + p{margin-top:8px;}
+.detalle-oferta-lista{display:flex;flex-direction:column;}
+.detalle-oferta-fila{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:10px 0;
+  border-top:1px solid var(--linea);
+  text-decoration:none;
+  color:var(--ink);
+}
+.detalle-oferta-fila:first-child{border-top:none;}
+.detalle-oferta-cat{font-size:14px;font-weight:700;display:flex;align-items:center;gap:6px;}
+.detalle-oferta-precio{font-size:14px;font-weight:800;color:var(--mostaza-dark);text-align:right;}
+.detalle-oferta-precio small{font-weight:400;color:var(--ink-soft);}
+.detalle-fila{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  text-decoration:none;
+  color:var(--ink);
+  font-size:14px;
+  font-weight:700;
+}
+.detalle-fila span:first-child{font-size:20px;}
+.detalle-fila small{font-weight:400;color:var(--ink-soft);}
+.btn-visitar-tienda{margin-top:6px;margin-bottom:12px;}
 
 /* ---------- Pantalla de Configuración ---------- */
 .config-seccion{margin-bottom:22px;}
@@ -430,7 +504,7 @@ main{
 /* ---------- Modales ---------- */
 .modal{
   position:fixed;inset:0;
-  background:rgba(43,38,32,0.45);
+  background:rgba(36,59,83,0.45);
   display:flex;
   align-items:flex-end;
   z-index:50;
@@ -444,27 +518,12 @@ main{
   padding:20px 20px calc(20px + var(--safe-bottom));
 }
 .modal-chico{border-radius:20px;margin:auto 16px;max-width:360px;}
-.modal-header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin-bottom:12px;
-}
-.btn-cerrar-modal{
-  background:var(--turquesa-soft);
-  border:none;
-  border-radius:50%;
-  width:34px;height:34px;
-  color:var(--turquesa);
-  font-size:14px;
-}
 .modal-footer{
   display:flex;
   gap:10px;
   margin-top:16px;
 }
 .modal-footer .btn-secundario, .modal-footer .btn-principal, .modal-footer .btn-peligro{flex:1;}
-.separador{border:none;border-top:1px solid var(--linea);margin:18px 0;}
 .texto-legal{font-size:12px;color:var(--ink-soft);margin-top:16px;}
 
 /* ---------- Toast ---------- */
@@ -473,7 +532,7 @@ main{
   bottom:calc(88px + var(--safe-bottom));
   left:50%;
   transform:translateX(-50%);
-  background:var(--turquesa);
+  background:var(--ink);
   color:#fff;
   padding:12px 20px;
   border-radius:999px;
@@ -487,7 +546,7 @@ main{
 
 /* ---------- Responsive escritorio ---------- */
 @media (min-width:720px){
-  body{background:linear-gradient(180deg,var(--bg),#F3E9D6);}
+  body{background:linear-gradient(180deg,var(--bg),#FCEEE0);}
   .app-header, main, .nav-inferior > div{max-width:640px;margin:0 auto;}
   .nav-inferior{border-radius:0;}
 }

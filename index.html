@@ -23,11 +23,21 @@
 <div id="pantalla-bienvenida" class="pantalla-full oculto">
   <div class="bienvenida-card">
     <div class="logo-llama" aria-hidden="true">
-      <svg viewBox="0 0 64 84" width="46" height="60">
-        <path d="M32 4 L44 34 Q47 42 44 50 Q40 58 32 58 Q24 58 20 50 Q17 42 20 34 Z" fill="var(--coral-soft)"/>
-        <ellipse cx="32" cy="46" rx="7" ry="11" fill="var(--coral)"/>
-        <rect x="20" y="56" width="24" height="26" rx="6" fill="var(--card)" stroke="var(--linea)" stroke-width="1.5"/>
-        <path d="M50 12 L52 18 L58 20 L52 22 L50 28 L48 22 L42 20 L48 18 Z" fill="var(--mostaza)"/>
+      <svg viewBox="0 0 100 100" width="72" height="72">
+        <defs>
+          <linearGradient id="velasGradWelcome" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#FF6B6B"/>
+            <stop offset="100%" stop-color="#2EC4B6"/>
+          </linearGradient>
+        </defs>
+        <circle cx="50" cy="50" r="50" fill="url(#velasGradWelcome)"/>
+        <rect x="32" y="54" width="36" height="30" rx="6" fill="#FFFFFF"/>
+        <path d="M50 60 L54.5 66 C56 68 55 71 52.5 71.5 C51 71.8 50 71 50 71 C50 71 49 71.8 47.5 71.5 C45 71 44 68 45.5 66 Z" fill="#FF6B6B"/>
+        <line x1="50" y1="46" x2="50" y2="55" stroke="#3C322D" stroke-width="2"/>
+        <path d="M50 20 C44 30 41 36 41 41 C41 46.5 45 50 50 50 C55 50 59 46.5 59 41 C59 36 56 30 50 20Z" fill="#FF9F1C"/>
+        <ellipse cx="50" cy="43" rx="4.5" ry="6" fill="#FFC857"/>
+        <path d="M22 18 L24 24 L30 26 L24 28 L22 34 L20 28 L14 26 L20 24 Z" fill="#FFFFFF"/>
+        <path d="M18 34 L19 37 L22 38 L19 39 L18 42 L17 39 L14 38 L17 37 Z" fill="#FFFFFF" opacity="0.85"/>
       </svg>
     </div>
     <h1>Bienvenido a VELAS</h1>
@@ -43,16 +53,7 @@
 <!-- APP -->
 <div id="app" class="oculto">
 
-  <header class="app-header">
-    <div class="header-titulo">
-      <svg viewBox="0 0 64 84" width="20" height="26" aria-hidden="true">
-        <path d="M32 4 L44 34 Q47 42 44 50 Q40 58 32 58 Q24 58 20 50 Q17 42 20 34 Z" fill="var(--coral-soft)"/>
-        <ellipse cx="32" cy="46" rx="7" ry="11" fill="var(--coral)"/>
-        <rect x="20" y="56" width="24" height="26" rx="6" fill="var(--card)" stroke="var(--linea)" stroke-width="1.5"/>
-      </svg>
-      <span>VELAS</span>
-    </div>
-  </header>
+  <header class="app-header" id="app-header"></header>
 
   <main id="contenido-principal"></main>
 
@@ -74,21 +75,6 @@
       <span class="nav-texto">Ajustes</span>
     </button>
   </nav>
-</div>
-
-<!-- MODAL FILTROS -->
-<div id="modal-filtros" class="modal oculto" role="dialog" aria-label="Filtros avanzados">
-  <div class="modal-contenido">
-    <div class="modal-header">
-      <h2>Filtros</h2>
-      <button class="btn-cerrar-modal" data-close="modal-filtros" aria-label="Cerrar">✕</button>
-    </div>
-    <div class="modal-body" id="modal-filtros-body"></div>
-    <div class="modal-footer">
-      <button class="btn-secundario" id="btn-limpiar-filtros">Limpiar filtros</button>
-      <button class="btn-principal" id="btn-aplicar-filtros">Ver resultados</button>
-    </div>
-  </div>
 </div>
 
 <!-- MODAL CONFIRMACION -->

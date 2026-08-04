@@ -2,14 +2,25 @@
 
 "Encontrá, comparé y elegí el mejor proveedor para tus velas."
 
-App simple y rápida para encontrar proveedores de insumos para velas: ceras, pabilos,
-fragancias, colorantes, moldes, recipientes y más. Compará precios y guardá tus favoritos.
+App para encontrar proveedores de insumos para velas: ceras, pabilos, fragancias, colorantes,
+moldes, recipientes y más. Compará precios, guardá favoritos y accedé directo a la tienda de
+cada proveedor.
 
-## Identidad visual
+## Diseño (basado en el mockup de identidad visual)
 
-- **Logo:** vela minimalista + llama moderna + destello de creatividad, estilo flat design.
-- **Tipografía:** Poppins (con respaldo automático a fuentes del sistema si no hay conexión).
-- **Colores principales:** Coral `#FF6B6B`, Turquesa `#2EC4B6`, Mostaza `#FFC857`, Fucsia `#FF4D8D`.
+- **Logo:** frasco de vela minimalista con corazón, llama y destellos, en insignia circular con
+  degradado coral → turquesa.
+- **Header dinámico:** en Inicio muestra menú + logo + acceso a favoritos; en el resto de las
+  pantallas muestra flecha de volver + título.
+- **Categorías:** círculos de color suave con emoji, en grilla de 4 columnas.
+- **Proveedores destacados:** carrusel horizontal en la pantalla de Inicio.
+- **Tarjetas de proveedor:** avatar circular con iniciales, insignia "Envío a todo el país",
+  botón de favorito (corazón) y botón de carrito que abre la tienda.
+- **Filtros:** desplegables tipo píldora (Categoría, Zona, Ordenar por precio) siempre visibles
+  arriba de los resultados.
+- **Pantalla de detalle:** nueva — al tocar una tarjeta se abre la ficha del proveedor con
+  "Sobre el proveedor", contacto (sitio web o Instagram) y botón "Visitar tienda".
+- **Favoritos vacío:** ilustración de canasta con destellos.
 
 ## Cómo publicarla en GitHub Pages
 
@@ -18,26 +29,27 @@ fragancias, colorantes, moldes, recipientes y más. Compará precios y guardá t
    `index.html`, `styles.css`, `app.js`, `manifest.webmanifest`, `service-worker.js`,
    `proveedores.js`, `icon-192.png`, `icon-512.png`, `apple-touch-icon.png`, `favicon-32.png`,
    `README.md`.
-3. Andá a **Settings → Pages → Deploy from a branch → main → /(root) → Save**.
+3. **Settings → Pages → Deploy from a branch → main → /(root) → Save.**
 4. Esperá 1-2 minutos y abrí el link publicado.
 
 ## Cómo actualizar el listado de proveedores
 
-Todo el listado vive en `proveedores.js`. Editalo directo en GitHub (tocá el archivo → lápiz),
-completá `nombre`, `categoria`, `precio` (usá `0` si no está confirmado — la app muestra
-"Consultar precio" sola), `unidad`, `ubicacion`, `enlace`, `notas` y `ultimaActualizacion`.
+Todo el listado vive en `proveedores.js`. Editalo directo en GitHub: `nombre`, `categoria`,
+`precio` (`0` = "Consultar"), `unidad`, `ubicacion`, `enlace`, `notas`, `ultimaActualizacion`.
 
-## Funciones de esta versión (v1.0)
+## Cómo funciona el agrupado por negocio
 
-- Inicio, Buscar (con tarjetas o tabla comparativa), Favoritos, Configuración.
-- Filtros: categoría, zona, ordenar por precio.
-- Nunca muestra "$0" — dice "Consultar precio".
-- Insignia de "Envío nacional", fecha de actualización, favoritos persistentes.
+Cada proveedor puede vender en varias categorías (por ejemplo, Deepa Insumos vende cera, pabilos,
+fragancias, colorantes, moldes y recipientes). En `proveedores.js`, cada categoría de un mismo
+negocio es una entrada separada, pero comparten los campos `negocio` (una clave interna, por
+ejemplo `"deepa"`) y `nombreNegocio` (el nombre que se muestra, por ejemplo `"Deepa Insumos"`).
+La app agrupa automáticamente todas las entradas con el mismo `negocio` en una sola tarjeta,
+mostrando todas sus categorías juntas y el precio más conveniente como destacado.
 
-## Qué NO tiene (a propósito, según el roadmap v1.0)
+Para agregar una nueva categoría a un negocio que ya existe, copiá una de sus entradas, cambiá
+`categoria`, `precio`, `unidad` y `enlace`, y dejá el mismo `negocio` y `nombreNegocio`. Para un
+negocio nuevo con una sola categoría, simplemente no incluyas los campos `negocio` ni
+`nombreNegocio` — la app va a usar el `id` y el `nombre` de esa entrada.
 
-Login, pagos, chat, IA, calculadoras, guías, carrito, panel de administración. Quedan para
-una v2.0 futura.
-
-**Aviso:** VELAS es una guía informativa de proveedores. No participamos en las transacciones
-ni garantizamos precios, stock o calidad de los productos de terceros.
+**Aviso:** VELAS es una guía informativa de proveedores. No participamos en las transacciones ni
+garantizamos precios, stock o calidad de los productos de terceros.
