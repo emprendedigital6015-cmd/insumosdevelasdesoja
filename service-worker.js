@@ -1,4 +1,4 @@
-var CACHE_NAME = "velas-cache-v7";
+var CACHE_NAME = "velas-cache-v8";
 var ARCHIVOS_ESENCIALES = [
   "./",
   "./index.html",

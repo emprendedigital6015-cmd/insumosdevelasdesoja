@@ -6,22 +6,26 @@ App para encontrar proveedores de insumos para velas: ceras, pabilos, fragancias
 moldes, recipientes y más. Compará precios, guardá favoritos y accedé directo a la tienda de
 cada proveedor.
 
-## Diseño (basado en el mockup de identidad visual)
+## Diseño (basado en el sistema de diseño de VELAS)
 
 - **Logo:** frasco de vela minimalista con corazón, llama y destellos, en insignia circular con
   degradado coral → turquesa.
+- **Íconos:** todos lineales (outline), sin relleno, mismo grosor de trazo — reemplazan los
+  emoji que se usaban antes (navegación, categorías, ubicación, envío, favoritos, etc.).
+- **Tipografía:** Poppins.
+- **Tarjetas:** radio de 18px, más separación entre ellas (20px) y entre secciones (32px).
+- **Precios:** todos se muestran como "Consultar", en una insignia mostaza.
 - **Header dinámico:** en Inicio muestra menú + logo + acceso a favoritos; en el resto de las
   pantallas muestra flecha de volver + título.
-- **Categorías:** círculos de color suave con emoji, en grilla de 4 columnas.
+- **Categorías:** círculos de color suave con ícono lineal, en grilla de 4 columnas.
 - **Proveedores destacados:** carrusel horizontal en la pantalla de Inicio.
-- **Tarjetas de proveedor:** avatar circular con iniciales, insignia "Envío a todo el país",
-  botón de favorito (corazón) y botón de carrito que abre la tienda.
-- **Filtros:** desplegables tipo píldora (Categoría, Zona) siempre visibles arriba de los
-  resultados. Ya no incluye ordenar por precio.
-- **Precios:** todos se muestran como "Consultar" — la app no publica montos.
-- **Pantalla de detalle:** nueva — al tocar una tarjeta se abre la ficha del proveedor con
-  "Sobre el proveedor", contacto (sitio web o Instagram) y botón "Visitar tienda".
+- **Filtros:** desplegables tipo píldora (Categoría, Zona — con "Interior de País"), sin
+  ordenar por precio.
+- **Pantalla de detalle:** al tocar una tarjeta se abre la ficha del proveedor con "Lo que
+  ofrece" (todas sus categorías y precios), "Sobre el proveedor", contacto y "Visitar tienda".
 - **Favoritos vacío:** ilustración de canasta con destellos.
+- **Agrupado por negocio:** un proveedor que vende en varias categorías aparece en una sola
+  tarjeta con todas sus categorías juntas.
 
 ## Cómo publicarla en GitHub Pages
 

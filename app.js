@@ -3,14 +3,14 @@
 
   /* ---------------- Constantes ---------------- */
   var CATEGORIAS = [
-    { id: "ceras", nombre: "Ceras", emoji: "🕯️", color: "#FFC857" },
-    { id: "pabilos", nombre: "Pabilos", emoji: "🧵", color: "#2EC4B6" },
-    { id: "fragancias", nombre: "Fragancias", emoji: "🌸", color: "#FF6B6B" },
-    { id: "colorantes", nombre: "Colorantes", emoji: "🎨", color: "#9B5DE5" },
-    { id: "moldes", nombre: "Moldes", emoji: "🧱", color: "#3A86FF" },
-    { id: "recipientes", nombre: "Recipientes", emoji: "🥛", color: "#7BD389" },
-    { id: "endurecedores", nombre: "Endurecedores", emoji: "⚪", color: "#6C757D" },
-    { id: "otros", nombre: "Otros", emoji: "📦", color: "#B8B8B8" }
+    { id: "ceras", nombre: "Ceras", icono: "cera", color: "#FFC857" },
+    { id: "pabilos", nombre: "Pabilos", icono: "pabilo", color: "#2EC4B6" },
+    { id: "fragancias", nombre: "Fragancias", icono: "fragancia", color: "#FF6B6B" },
+    { id: "colorantes", nombre: "Colorantes", icono: "colorante", color: "#9B5DE5" },
+    { id: "moldes", nombre: "Moldes", icono: "molde", color: "#3A86FF" },
+    { id: "recipientes", nombre: "Recipientes", icono: "recipiente", color: "#7BD389" },
+    { id: "endurecedores", nombre: "Endurecedores", icono: "endurecedor", color: "#6C757D" },
+    { id: "otros", nombre: "Otros", icono: "otros", color: "#B8B8B8" }
   ];
   var ZONAS = ["Envío nacional", "CABA", "GBA", "Interior"];
 
@@ -18,6 +18,41 @@
     perfil: "velas_perfil",
     favoritos: "velas_favoritos"
   };
+
+  /* ---------------- Íconos lineales (outline, sin relleno) ---------------- */
+  function icono(nombre, size, relleno) {
+    size = size || 22;
+    var d = {
+      home: 'M3 11.5 12 4l9 7.5 M5.5 10v9.5a1 1 0 0 0 1 1H9.5v-6a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v6h3a1 1 0 0 0 1-1V10',
+      search: 'M11 19a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z M21 21l-4.3-4.3',
+      heart: 'M12 20.5s-7.5-4.6-9.8-9.2C.7 8 2 4.5 5.6 3.7c2-.5 3.9.4 6.4 3 2.5-2.6 4.4-3.5 6.4-3C21.9 4.5 23.3 8 21.8 11.3 19.5 15.9 12 20.5 12 20.5Z',
+      heartFill: 'M12 20.5s-7.5-4.6-9.8-9.2C.7 8 2 4.5 5.6 3.7c2-.5 3.9.4 6.4 3 2.5-2.6 4.4-3.5 6.4-3C21.9 4.5 23.3 8 21.8 11.3 19.5 15.9 12 20.5 12 20.5Z',
+      gear: 'M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z M19.4 13.5a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.6V20a2 2 0 1 1-4 0v-.2a1.7 1.7 0 0 0-1.1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.6-1H4a2 2 0 1 1 0-4h.2a1.7 1.7 0 0 0 1.6-1.1 1.7 1.7 0 0 0-.3-1.9l-.1-.1A2 2 0 1 1 8.2 3l.1.1a1.7 1.7 0 0 0 1.9.3H10.3a1.7 1.7 0 0 0 1-1.6V1.8a2 2 0 1 1 4 0V2a1.7 1.7 0 0 0 1 1.6 1.7 1.7 0 0 0 1.9-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.9V8a1.7 1.7 0 0 0 1.6 1H20a2 2 0 1 1 0 4h-.2a1.7 1.7 0 0 0-1.6 1Z',
+      cart: 'M3 3h2l2.4 12.2a2 2 0 0 0 2 1.6h7.6a2 2 0 0 0 2-1.6L21 8H6.2 M9.5 21a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z M17 21a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z',
+      pin: 'M12 21.5S5 15 5 10a7 7 0 1 1 14 0c0 5-7 11.5-7 11.5Z M12 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z',
+      calendar: 'M4.5 6.5h15a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-15a1 1 0 0 1-1-1v-12a1 1 0 0 1 1-1Z M8 4v4 M16 4v4 M3.5 10.5h17',
+      truck: 'M2.5 6h11v10h-11z M13.5 10h4l3 3v3h-7z M6 19.5a1.7 1.7 0 1 0 0-3.4 1.7 1.7 0 0 0 0 3.4Z M17 19.5a1.7 1.7 0 1 0 0-3.4 1.7 1.7 0 0 0 0 3.4Z',
+      menu: 'M3.5 6.5h17 M3.5 12h17 M3.5 17.5h17',
+      back: 'M19 12H5 M11 6l-6 6 6 6',
+      web: 'M12 20.5a8.5 8.5 0 1 0 0-17 8.5 8.5 0 0 0 0 17Z M3.8 9h16.4 M3.8 15h16.4 M12 3.2c2 2.4 3 5.3 3 8.8s-1 6.4-3 8.8c-2-2.4-3-5.3-3-8.8s1-6.4 3-8.8Z',
+      instagram: 'M7 3.5h10a3.5 3.5 0 0 1 3.5 3.5v10a3.5 3.5 0 0 1-3.5 3.5H7A3.5 3.5 0 0 1 3.5 17V7A3.5 3.5 0 0 1 7 3.5Z M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z M17 6.2h.01',
+      close: 'M6 6l12 12 M18 6 6 18',
+      basket: 'M4 10h16l-1.6 9.2a2 2 0 0 1-2 1.8H7.6a2 2 0 0 1-2-1.8L4 10Z M8 10 9.5 4h5L16 10 M9.5 13.5v4 M14.5 13.5v4',
+      sparkle: 'M12 3l1.6 5.4L19 10l-5.4 1.6L12 17l-1.6-5.4L5 10l5.4-1.6Z',
+      /* categorías */
+      cera: 'M9 21h6 M12 21V9 M9.5 9c0-3 1-5 2.5-7 1.5 2 2.5 4 2.5 7a2.5 2.5 0 0 1-5 0Z',
+      pabilo: 'M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Z M8 8a4 4 0 0 1 8 0c0 2-4 2-4 5 M12 17h.01',
+      fragancia: 'M12 3c1.8 1.6 2.8 3 2.8 4.6A2.8 2.8 0 0 1 12 10.4a2.8 2.8 0 0 1-2.8-2.8C9.2 6 10.2 4.6 12 3Z M6 12c1.8 1.6 2.8 3 2.8 4.6A2.8 2.8 0 0 1 6 19.4a2.8 2.8 0 0 1-2.8-2.8C3.2 15 4.2 13.6 6 12Z M18 12c1.8 1.6 2.8 3 2.8 4.6a2.8 2.8 0 0 1-5.6 0c0-1.6 1-3 2.8-4.6Z',
+      colorante: 'M12 20.5c-4.7 0-8.5-3.4-8.5-8A8.5 8 0 0 1 12 4c4.7 0 8.5 2.7 8.5 6.5 0 2-1.5 3-3.2 3h-2a1.6 1.6 0 0 0-1 2.8c.5.4.5 1.2-.1 1.6-.6.4-2.2.6-3.2.6Z M7.5 12a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z M11 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z M15.5 10.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z',
+      molde: 'M4 8.5 12 4l8 4.5v7L12 20l-8-4.5v-7Z M4 8.5 12 13l8-4.5 M12 13v7',
+      recipiente: 'M6 9h12l-1 10.5a2 2 0 0 1-2 1.8H9a2 2 0 0 1-2-1.8L6 9Z M8.5 9V6a3.5 3.5 0 0 1 7 0v3',
+      endurecedor: 'M12 20.5a8.5 8.5 0 1 0 0-17 8.5 8.5 0 0 0 0 17Z M12 8v4l3 2',
+      otros: 'M4 8l8-4 8 4-8 4-8-4Z M4 8v8l8 4 8-4V8 M12 12v8'
+    };
+    var path = d[nombre] || d.otros;
+    var fill = relleno ? "currentColor" : "none";
+    return '<svg class="icono-linea" width="' + size + '" height="' + size + '" viewBox="0 0 24 24" fill="' + fill + '" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="' + path + '"/></svg>';
+  }
 
   var TITULOS_PANTALLA = {
     buscar: "Buscar",
@@ -87,7 +122,7 @@
 
   function categoriaInfo(id) {
     for (var i = 0; i < CATEGORIAS.length; i++) if (CATEGORIAS[i].id === id) return CATEGORIAS[i];
-    return { id: id, nombre: id, emoji: "•", color: "#999" };
+    return { id: id, nombre: id, icono: "otros", color: "#999" };
   }
 
   /* ---------------- Agrupación por negocio ---------------- */
@@ -192,19 +227,19 @@
     var el = $("#app-header");
     if (estado.pantalla === "inicio") {
       el.innerHTML =
-        '<button class="btn-icono-header" id="btn-menu" aria-label="Menú">☰</button>' +
+        '<button class="btn-icono-header" id="btn-menu" aria-label="Menú">' + icono("menu", 22) + '</button>' +
         '<div class="header-titulo">' + logoMarkSvg() + '<span>Velas</span></div>' +
-        '<button class="btn-icono-header" id="btn-header-favoritos" aria-label="Favoritos">♡</button>';
+        '<button class="btn-icono-header" id="btn-header-favoritos" aria-label="Favoritos">' + icono("heart", 22) + '</button>';
     } else if (estado.pantalla === "detalle") {
       var grupo = grupoPorNegocio(estado.detalleId);
       var fav = grupo ? esFavorito(grupo.negocio) : false;
       el.innerHTML =
-        '<button class="btn-icono-header" id="btn-volver" aria-label="Volver">←</button>' +
+        '<button class="btn-icono-header" id="btn-volver" aria-label="Volver">' + icono("back", 22) + '</button>' +
         '<div class="header-titulo-texto">' + (grupo ? escapeHtml(grupo.nombreNegocio) : "Proveedor") + '</div>' +
-        '<button class="btn-icono-header' + (fav ? ' activo-fav' : '') + '" id="btn-header-fav-detalle" aria-label="Guardar en favoritos">' + (fav ? "♥" : "♡") + '</button>';
+        '<button class="btn-icono-header' + (fav ? ' activo-fav' : '') + '" id="btn-header-fav-detalle" aria-label="Guardar en favoritos">' + icono("heart", 22, fav) + '</button>';
     } else {
       el.innerHTML =
-        '<button class="btn-icono-header" id="btn-volver" aria-label="Volver">←</button>' +
+        '<button class="btn-icono-header" id="btn-volver" aria-label="Volver">' + icono("back", 22) + '</button>' +
         '<div class="header-titulo-texto">' + (TITULOS_PANTALLA[estado.pantalla] || "") + '</div>' +
         '<span class="btn-icono-header-spacer"></span>';
     }
@@ -229,12 +264,30 @@
     });
   }
 
+  /* ---------------- Navegación inferior ---------------- */
+  function renderNav() {
+    var items = [
+      { pantalla: "inicio", nombre: "inicio", icono: "home", label: "Inicio" },
+      { pantalla: "buscar", nombre: "buscar", icono: "search", label: "Buscar" },
+      { pantalla: "favoritos", nombre: "favoritos", icono: "heart", label: "Favoritos" },
+      { pantalla: "configuracion", nombre: "configuracion", icono: "gear", label: "Ajustes" }
+    ];
+    $("#nav-inferior").innerHTML = items.map(function (it) {
+      var activo = estado.pantalla === it.pantalla;
+      return '<button class="nav-item' + (activo ? ' activo' : '') + '" data-pantalla="' + it.pantalla + '" aria-label="' + it.label + '">' +
+        '<span class="nav-icono">' + icono(it.icono, 22, activo && it.icono === "heart") + '</span>' +
+        '<span class="nav-texto">' + it.label + '</span>' +
+        '</button>';
+    }).join("");
+    $all(".nav-item").forEach(function (btn) {
+      btn.addEventListener("click", function () { irAPantalla(btn.dataset.pantalla); });
+    });
+  }
+
   /* ---------------- Render: navegación ---------------- */
   function irAPantalla(nombre) {
     estado.pantalla = nombre;
-    $all(".nav-item").forEach(function (btn) {
-      btn.classList.toggle("activo", btn.dataset.pantalla === nombre);
-    });
+    renderNav();
     renderHeader();
     renderPantalla();
     $("#contenido-principal").scrollTop = 0;
@@ -244,7 +297,7 @@
   function irADetalle(id) {
     estado.detalleId = id;
     estado.pantalla = "detalle";
-    $all(".nav-item").forEach(function (btn) { btn.classList.remove("activo"); });
+    renderNav();
     renderHeader();
     renderPantalla();
     window.scrollTo(0, 0);
@@ -267,7 +320,7 @@
     var catsHtml = CATEGORIAS.map(function (c) {
       return '<button class="cat-circulo-item" data-ir-categoria="' + c.id + '">' +
         '<span class="cat-circulo" style="background:' + hexConAlpha(c.color, "26") + '">' +
-          '<span class="cat-circulo-emoji">' + c.emoji + '</span>' +
+          '<span class="cat-circulo-emoji">' + icono(c.icono, 24) + '</span>' +
         '</span>' +
         '<span class="cat-circulo-label">' + c.nombre + '</span>' +
         '</button>';
@@ -285,8 +338,8 @@
       '<div class="saludo">¡Hola' + (perfil.nombre ? ", " + escapeHtml(perfil.nombre) : "") + '! 👋</div>' +
       '<p class="frase-inicio">¿Qué insumo estás buscando hoy?</p>' +
       '<div class="buscador-wrap">' +
-        '<input type="text" id="input-busqueda-inicio" placeholder="Buscar insumo o proveedor...">' +
-        '<button class="btn-buscar-icono" id="btn-buscar-inicio" aria-label="Buscar">🔍</button>' +
+        '<input type="text" id="input-busqueda-inicio" placeholder="¿Qué insumo estás buscando?">' +
+        '<button class="btn-buscar-icono" id="btn-buscar-inicio" aria-label="Buscar">' + icono("search", 20) + '</button>' +
       '</div>' +
       '<div class="categorias-grid-circ">' + catsHtml + '</div>' +
       '<div class="destacados-header">' +
@@ -295,7 +348,7 @@
       '</div>' +
       '<div class="destacados-scroll">' + destacadosHtml + '</div>' +
       '<div class="actualizacion-card">' +
-        '<span class="actualizacion-icono">🕯️</span>' +
+        '<span class="actualizacion-icono">' + icono("cera", 26) + '</span>' +
         '<div><div class="actualizacion-titulo">Última actualización</div>' +
         '<div class="actualizacion-fecha">' + formatearFecha(ultimaActualizacionGlobal()) + '</div></div>' +
       '</div>'
@@ -340,7 +393,7 @@
   function vistaBuscar() {
     var lista = proveedoresFiltrados();
 
-    var catOpciones = CATEGORIAS.map(function (c) { return { value: c.id, label: c.emoji + " " + c.nombre }; });
+    var catOpciones = CATEGORIAS.map(function (c) { return { value: c.id, label: c.nombre }; });
     var zonaOpciones = ZONAS.map(function (z) {
       return { value: z, label: z === "Interior" ? "Interior de País" : z };
     });
@@ -348,7 +401,7 @@
     var listaHtml;
     if (lista.length === 0) {
       listaHtml = '<div class="estado-vacio">' +
-        '<div class="estado-vacio-icono">🔎</div>' +
+        '<div class="estado-vacio-icono">' + icono("search", 32) + '</div>' +
         '<p>No encontramos proveedores con ese filtro. Probá con otra categoría o búsqueda.</p>' +
         '</div>';
     } else {
@@ -357,8 +410,8 @@
 
     return (
       '<div class="buscador-wrap">' +
-        '<input type="text" id="input-busqueda" placeholder="Cera de soja" value="' + escapeHtml(estado.busqueda) + '">' +
-        '<button class="btn-buscar-icono" id="btn-buscar-icono" aria-label="Buscar">🔍</button>' +
+        '<input type="text" id="input-busqueda" placeholder="¿Qué insumo estás buscando?" value="' + escapeHtml(estado.busqueda) + '">' +
+        '<button class="btn-buscar-icono" id="btn-buscar-icono" aria-label="Buscar">' + icono("search", 20) + '</button>' +
       '</div>' +
       '<div class="pills-row">' +
         selectPillHtml("select-categoria", catOpciones, estado.filtroCategoria, "Categoría") +
@@ -383,15 +436,15 @@
               '<div class="proveedor-nombre">' + escapeHtml(grupo.nombreNegocio) + '</div>' +
               '<div class="proveedor-cat">' + textoCategoriasGrupo(grupo, 3) + '</div>' +
             '</div>' +
-            '<button class="btn-favorito-card' + (fav ? ' activo' : '') + '" data-fav="' + grupo.negocio + '" aria-label="Guardar en favoritos">' + (fav ? '♥' : '♡') + '</button>' +
+            '<button class="btn-favorito-card' + (fav ? ' activo' : '') + '" data-fav="' + grupo.negocio + '" aria-label="Guardar en favoritos">' + icono("heart", 20, fav) + '</button>' +
           '</div>' +
           '<div class="proveedor-ubi-row">' +
-            '<span class="proveedor-ubi">📍 ' + grupo.ubicacion + '</span>' +
-            (grupo.envioNacional ? '<span class="envio-nacional-badge">🚚 Envío a todo el país</span>' : '') +
+            '<span class="proveedor-ubi">' + icono("pin", 14) + ' ' + grupo.ubicacion + '</span>' +
+            (grupo.envioNacional ? '<span class="envio-nacional-badge">' + icono("truck", 13) + ' Envío a todo el país</span>' : '') +
           '</div>' +
           '<div class="proveedor-bottom">' +
             '<span class="proveedor-precio">' + formatearPrecio() + '</span>' +
-            '<a class="btn-carrito" href="' + grupo.enlace + '" target="_blank" rel="noopener" aria-label="Ver tienda de ' + escapeHtml(grupo.nombreNegocio) + '" data-stop-propagation="1">🛒</a>' +
+            '<a class="btn-carrito" href="' + grupo.enlace + '" target="_blank" rel="noopener" aria-label="Ver tienda de ' + escapeHtml(grupo.nombreNegocio) + '" data-stop-propagation="1">' + icono("cart", 18) + '</a>' +
           '</div>' +
         '</div>' +
       '</div>'
@@ -416,7 +469,7 @@
       var cat = categoriaInfo(e.categoria);
       return (
         '<a class="detalle-oferta-fila" href="' + e.enlace + '" target="_blank" rel="noopener">' +
-          '<span class="detalle-oferta-cat"><span>' + cat.emoji + '</span> ' + cat.nombre + '</span>' +
+          '<span class="detalle-oferta-cat"><span class="detalle-oferta-icono">' + icono(cat.icono, 18) + '</span> ' + cat.nombre + '</span>' +
           '<span class="detalle-oferta-precio">' + formatearPrecio() + '</span>' +
         '</a>'
       );
@@ -433,8 +486,8 @@
         '<div class="detalle-nombre">' + escapeHtml(grupo.nombreNegocio) + '</div>' +
         '<div class="detalle-cat">' + textoCategoriasGrupo(grupo, 4) + '</div>' +
         '<div class="proveedor-ubi-row detalle-ubi-row">' +
-          '<span class="proveedor-ubi">📍 ' + grupo.ubicacion + '</span>' +
-          (grupo.envioNacional ? '<span class="envio-nacional-badge">🚚 Envío a todo el país</span>' : '') +
+          '<span class="proveedor-ubi">' + icono("pin", 14) + ' ' + grupo.ubicacion + '</span>' +
+          (grupo.envioNacional ? '<span class="envio-nacional-badge">' + icono("truck", 13) + ' Envío a todo el país</span>' : '') +
         '</div>' +
       '</div>' +
       '<div class="detalle-seccion">' +
@@ -445,7 +498,7 @@
       '<div class="detalle-seccion">' +
         '<h3>Contacto</h3>' +
         '<a class="detalle-fila" href="' + grupo.enlace + '" target="_blank" rel="noopener">' +
-          '<span>' + (esInstagram ? "📷" : "🌐") + '</span>' +
+          '<span>' + (esInstagram ? icono("instagram", 20) : icono("web", 20)) + '</span>' +
           '<span>' + (esInstagram ? "Instagram" : "Sitio web") + '<br><small>' + (esInstagram ? "@" + escapeHtml(handleInstagram) : escapeHtml(grupo.enlace.replace(/^https?:\/\//, ""))) + '</small></span>' +
         '</a>' +
       '</div>' +
@@ -460,7 +513,7 @@
     var grupos = agruparEntradas(window.PROVEEDORES).filter(function (g) { return favs.indexOf(g.negocio) !== -1; });
     if (grupos.length === 0) {
       return '<div class="estado-vacio estado-vacio-favoritos">' +
-        '<div class="estado-vacio-icono-grande">🧺<span class="chispa chispa-1">✦</span><span class="chispa chispa-2">✦</span></div>' +
+        '<div class="estado-vacio-icono-grande">' + icono("basket", 56) + '<span class="chispa chispa-1">' + icono("sparkle", 16) + '</span><span class="chispa chispa-2">' + icono("sparkle", 11) + '</span></div>' +
         '<h3>Aún no tienes favoritos</h3>' +
         '<p>Guardá tus proveedores favoritos para encontrarlos más rápido.</p>' +
         '<button class="btn-secundario-turquesa" id="btn-ir-buscar">Explorar proveedores</button>' +
@@ -582,10 +635,6 @@
 
   /* ---------------- Eventos globales ---------------- */
   function ligarEventosGlobales() {
-    $all(".nav-item").forEach(function (btn) {
-      btn.addEventListener("click", function () { irAPantalla(btn.dataset.pantalla); });
-    });
-
     $all("[data-close]").forEach(function (btn) {
       btn.addEventListener("click", function () { cerrarModal(btn.dataset.close); });
     });
@@ -605,6 +654,7 @@
       guardarPerfil({ nombre: nombre });
       $("#pantalla-bienvenida").classList.add("oculto");
       $("#app").classList.remove("oculto");
+      renderNav();
       renderHeader();
       renderPantalla();
     });
@@ -617,6 +667,7 @@
     if (perfil) {
       $("#pantalla-bienvenida").classList.add("oculto");
       $("#app").classList.remove("oculto");
+      renderNav();
       renderHeader();
       renderPantalla();
     } else {
