@@ -3,16 +3,16 @@
 
   /* ---------------- Constantes ---------------- */
   var CATEGORIAS = [
-    { id: "ceras", nombre: "Ceras", icono: "cera", color: "#FFC857" },
-    { id: "pabilos", nombre: "Pabilos", icono: "pabilo", color: "#2EC4B6" },
-    { id: "fragancias", nombre: "Fragancias", icono: "fragancia", color: "#FF6B6B" },
-    { id: "colorantes", nombre: "Colorantes", icono: "colorante", color: "#9B5DE5" },
-    { id: "moldes", nombre: "Moldes", icono: "molde", color: "#3A86FF" },
-    { id: "recipientes", nombre: "Recipientes", icono: "recipiente", color: "#7BD389" },
-    { id: "endurecedores", nombre: "Endurecedores", icono: "endurecedor", color: "#6C757D" },
-    { id: "otros", nombre: "Otros", icono: "otros", color: "#B8B8B8" }
+    { id: "ceras", nombre: "Ceras", icono: "cera", color: "#D9B974" },
+    { id: "pabilos", nombre: "Pabilos", icono: "pabilo", color: "#5D6D44" },
+    { id: "fragancias", nombre: "Fragancias", icono: "fragancia", color: "#C48A79" },
+    { id: "colorantes", nombre: "Colorantes", icono: "colorante", color: "#8B7355" },
+    { id: "moldes", nombre: "Moldes", icono: "molde", color: "#657786" },
+    { id: "recipientes", nombre: "Recipientes", icono: "recipiente", color: "#A9BA8E" },
+    { id: "endurecedores", nombre: "Endurecedores", icono: "endurecedor", color: "#2A3444" },
+    { id: "otros", nombre: "Otros", icono: "otros", color: "#B8AFA0" }
   ];
-  var ZONAS = ["Envío nacional", "CABA", "GBA", "Interior"];
+  var ZONAS = ["CABA", "GBA", "Interior"];
 
   var LS_KEYS = {
     perfil: "velas_perfil",
@@ -27,7 +27,7 @@
       search: 'M11 19a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z M21 21l-4.3-4.3',
       heart: 'M12 20.5s-7.5-4.6-9.8-9.2C.7 8 2 4.5 5.6 3.7c2-.5 3.9.4 6.4 3 2.5-2.6 4.4-3.5 6.4-3C21.9 4.5 23.3 8 21.8 11.3 19.5 15.9 12 20.5 12 20.5Z',
       heartFill: 'M12 20.5s-7.5-4.6-9.8-9.2C.7 8 2 4.5 5.6 3.7c2-.5 3.9.4 6.4 3 2.5-2.6 4.4-3.5 6.4-3C21.9 4.5 23.3 8 21.8 11.3 19.5 15.9 12 20.5 12 20.5Z',
-      gear: 'M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z M19.4 13.5a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.6V20a2 2 0 1 1-4 0v-.2a1.7 1.7 0 0 0-1.1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.6-1H4a2 2 0 1 1 0-4h.2a1.7 1.7 0 0 0 1.6-1.1 1.7 1.7 0 0 0-.3-1.9l-.1-.1A2 2 0 1 1 8.2 3l.1.1a1.7 1.7 0 0 0 1.9.3H10.3a1.7 1.7 0 0 0 1-1.6V1.8a2 2 0 1 1 4 0V2a1.7 1.7 0 0 0 1 1.6 1.7 1.7 0 0 0 1.9-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.9V8a1.7 1.7 0 0 0 1.6 1H20a2 2 0 1 1 0 4h-.2a1.7 1.7 0 0 0-1.6 1Z',
+      gear: 'M4 6h8 M16 6h4 M15 3.5v5 M4 12h2 M10 12h10 M9 9.5v5 M4 18h9 M17 18h3 M16 15.5v5',
       cart: 'M3 3h2l2.4 12.2a2 2 0 0 0 2 1.6h7.6a2 2 0 0 0 2-1.6L21 8H6.2 M9.5 21a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z M17 21a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z',
       pin: 'M12 21.5S5 15 5 10a7 7 0 1 1 14 0c0 5-7 11.5-7 11.5Z M12 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z',
       calendar: 'M4.5 6.5h15a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-15a1 1 0 0 1-1-1v-12a1 1 0 0 1 1-1Z M8 4v4 M16 4v4 M3.5 10.5h17',
@@ -35,18 +35,19 @@
       menu: 'M3.5 6.5h17 M3.5 12h17 M3.5 17.5h17',
       back: 'M19 12H5 M11 6l-6 6 6 6',
       web: 'M12 20.5a8.5 8.5 0 1 0 0-17 8.5 8.5 0 0 0 0 17Z M3.8 9h16.4 M3.8 15h16.4 M12 3.2c2 2.4 3 5.3 3 8.8s-1 6.4-3 8.8c-2-2.4-3-5.3-3-8.8s1-6.4 3-8.8Z',
+      whatsapp: 'M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3Z M8.5 8c.3-.6.9-.6 1.2 0l.6 1.2c.2.4.1.8-.2 1.1l-.5.5c.5 1.3 1.5 2.3 2.8 2.8l.5-.5c.3-.3.7-.4 1.1-.2l1.2.6c.6.3.6.9 0 1.2-1.5 1-3.4.8-4.9-.4-1.5-1.2-2.5-2.9-2.4-4.7 0-.6.2-1.2.6-1.6Z',
       instagram: 'M7 3.5h10a3.5 3.5 0 0 1 3.5 3.5v10a3.5 3.5 0 0 1-3.5 3.5H7A3.5 3.5 0 0 1 3.5 17V7A3.5 3.5 0 0 1 7 3.5Z M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z M17 6.2h.01',
       close: 'M6 6l12 12 M18 6 6 18',
       basket: 'M4 10h16l-1.6 9.2a2 2 0 0 1-2 1.8H7.6a2 2 0 0 1-2-1.8L4 10Z M8 10 9.5 4h5L16 10 M9.5 13.5v4 M14.5 13.5v4',
       sparkle: 'M12 3l1.6 5.4L19 10l-5.4 1.6L12 17l-1.6-5.4L5 10l5.4-1.6Z',
       /* categorías */
-      cera: 'M9 21h6 M12 21V9 M9.5 9c0-3 1-5 2.5-7 1.5 2 2.5 4 2.5 7a2.5 2.5 0 0 1-5 0Z',
-      pabilo: 'M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Z M8 8a4 4 0 0 1 8 0c0 2-4 2-4 5 M12 17h.01',
+      cera: 'M9 13h6v8H9Z M12 11v2 M12 2c-1.8 2.6-2.7 4.6-2.7 6.1a2.7 2.7 0 0 0 5.4 0C14.7 6.6 13.8 4.6 12 2Z',
+      pabilo: 'M6 5a6 2 0 1 0 12 0a6 2 0 1 0 -12 0 M6 19a6 2 0 1 0 12 0a6 2 0 1 0 -12 0 M6 5v14 M18 5v14 M8 9l8 2 M8 13l8 2',
       fragancia: 'M12 3c1.8 1.6 2.8 3 2.8 4.6A2.8 2.8 0 0 1 12 10.4a2.8 2.8 0 0 1-2.8-2.8C9.2 6 10.2 4.6 12 3Z M6 12c1.8 1.6 2.8 3 2.8 4.6A2.8 2.8 0 0 1 6 19.4a2.8 2.8 0 0 1-2.8-2.8C3.2 15 4.2 13.6 6 12Z M18 12c1.8 1.6 2.8 3 2.8 4.6a2.8 2.8 0 0 1-5.6 0c0-1.6 1-3 2.8-4.6Z',
       colorante: 'M12 20.5c-4.7 0-8.5-3.4-8.5-8A8.5 8 0 0 1 12 4c4.7 0 8.5 2.7 8.5 6.5 0 2-1.5 3-3.2 3h-2a1.6 1.6 0 0 0-1 2.8c.5.4.5 1.2-.1 1.6-.6.4-2.2.6-3.2.6Z M7.5 12a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z M11 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z M15.5 10.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z',
       molde: 'M4 8.5 12 4l8 4.5v7L12 20l-8-4.5v-7Z M4 8.5 12 13l8-4.5 M12 13v7',
       recipiente: 'M6 9h12l-1 10.5a2 2 0 0 1-2 1.8H9a2 2 0 0 1-2-1.8L6 9Z M8.5 9V6a3.5 3.5 0 0 1 7 0v3',
-      endurecedor: 'M12 20.5a8.5 8.5 0 1 0 0-17 8.5 8.5 0 0 0 0 17Z M12 8v4l3 2',
+      endurecedor: 'M6 9l6-6 6 6-6 11-6-11Z M6 9h12 M9 3l3 6 3-6 M9 9l3 11 3-11',
       otros: 'M4 8l8-4 8 4-8 4-8-4Z M4 8v8l8 4 8-4V8 M12 12v8'
     };
     var path = d[nombre] || d.otros;
@@ -66,6 +67,7 @@
     busqueda: "",
     filtroCategoria: "",
     filtroZona: "",
+    filtroEnvioNacional: false,
     detalleId: null,
     confirmarAccion: null
   };
@@ -148,11 +150,13 @@
       var principal = conPrecio.length
         ? conPrecio.reduce(function (a, b) { return b.precio < a.precio ? b : a; })
         : entradas2[0];
-      var envioNacional = entradas2.some(function (e) { return e.ubicacion === "Envío nacional"; });
-      var ubicacionMostrada = envioNacional ? "Envío nacional" : principal.ubicacion;
+      var envioNacional = entradas2.some(function (e) { return e.envioNacional; });
+      var ubicacionMostrada = principal.ubicacion;
       var categoriasUnicas = [];
       entradas2.forEach(function (e) { if (categoriasUnicas.indexOf(e.categoria) === -1) categoriasUnicas.push(e.categoria); });
       var maxFecha = entradas2.reduce(function (m, e) { return (!m || e.ultimaActualizacion > m) ? e.ultimaActualizacion : m; }, null);
+      var conWhatsapp = entradas2.filter(function (e) { return e.whatsapp; });
+      var whatsapp = conWhatsapp.length ? conWhatsapp[0].whatsapp : (principal.whatsapp || null);
       return {
         negocio: key,
         nombreNegocio: g.nombreNegocio,
@@ -165,6 +169,7 @@
         envioNacional: envioNacional,
         ultimaActualizacion: maxFecha,
         enlace: principal.enlace,
+        whatsapp: whatsapp,
         notas: principal.notas
       };
     });
@@ -210,15 +215,11 @@
   function logoMarkSvg() {
     return (
       '<svg viewBox="0 0 100 100" width="30" height="30" aria-hidden="true">' +
-        '<defs><linearGradient id="velasGradHeader" x1="0%" y1="0%" x2="100%" y2="100%">' +
-          '<stop offset="0%" stop-color="#FF6B6B"/><stop offset="100%" stop-color="#2EC4B6"/>' +
-        '</linearGradient></defs>' +
-        '<circle cx="50" cy="50" r="50" fill="url(#velasGradHeader)"/>' +
-        '<rect x="32" y="54" width="36" height="30" rx="6" fill="#FFFFFF"/>' +
-        '<path d="M50 60 L54.5 66 C56 68 55 71 52.5 71.5 C51 71.8 50 71 50 71 C50 71 49 71.8 47.5 71.5 C45 71 44 68 45.5 66 Z" fill="#FF6B6B"/>' +
-        '<line x1="50" y1="46" x2="50" y2="55" stroke="#3C322D" stroke-width="2"/>' +
-        '<path d="M50 20 C44 30 41 36 41 41 C41 46.5 45 50 50 50 C55 50 59 46.5 59 41 C59 36 56 30 50 20Z" fill="#FF9F1C"/>' +
-        '<ellipse cx="50" cy="43" rx="4.5" ry="6" fill="#FFC857"/>' +
+        '<circle cx="50" cy="50" r="50" fill="#FFFFFF"/>' +
+        '<circle cx="50" cy="50" r="42" fill="none" stroke="#D9B974" stroke-width="2"/>' +
+        '<rect x="41" y="54" width="18" height="24" rx="4" fill="#5D6D44"/>' +
+        '<line x1="50" y1="46" x2="50" y2="54" stroke="#2A3444" stroke-width="2"/>' +
+        '<path d="M50 28 C46 34 44 38 44 41.5 C44 45 47 47.5 50 47.5 C53 47.5 56 45 56 41.5 C56 38 54 34 50 28Z" fill="#B08F52"/>' +
       '</svg>'
     );
   }
@@ -228,7 +229,7 @@
     if (estado.pantalla === "inicio") {
       el.innerHTML =
         '<button class="btn-icono-header" id="btn-menu" aria-label="Menú">' + icono("menu", 22) + '</button>' +
-        '<div class="header-titulo">' + logoMarkSvg() + '<span>Velas</span></div>' +
+        '<div class="header-titulo">' + logoMarkSvg() + '<span>Velas Artesanales</span></div>' +
         '<button class="btn-icono-header" id="btn-header-favoritos" aria-label="Favoritos">' + icono("heart", 22) + '</button>';
     } else if (estado.pantalla === "detalle") {
       var grupo = grupoPorNegocio(estado.detalleId);
@@ -371,9 +372,17 @@
   function proveedoresFiltrados() {
     var texto = estado.busqueda.trim().toLowerCase();
     var entradas = window.PROVEEDORES.filter(function (p) {
-      if (texto && p.nombre.toLowerCase().indexOf(texto) === -1 && p.categoria.toLowerCase().indexOf(texto) === -1) return false;
+      if (texto) {
+        var coincide =
+          p.nombre.toLowerCase().indexOf(texto) !== -1 ||
+          p.categoria.toLowerCase().indexOf(texto) !== -1 ||
+          (p.notas && p.notas.toLowerCase().indexOf(texto) !== -1) ||
+          (p.nombreNegocio && p.nombreNegocio.toLowerCase().indexOf(texto) !== -1);
+        if (!coincide) return false;
+      }
       if (estado.filtroCategoria && p.categoria !== estado.filtroCategoria) return false;
       if (estado.filtroZona && p.ubicacion !== estado.filtroZona) return false;
+      if (estado.filtroEnvioNacional && !p.envioNacional) return false;
       return true;
     });
     var grupos = agruparEntradas(entradas);
@@ -410,10 +419,14 @@
 
     return (
       '<div class="buscador-wrap">' +
-        '<input type="text" id="input-busqueda" placeholder="¿Qué insumo estás buscando?" value="' + escapeHtml(estado.busqueda) + '">' +
+        '<div class="input-con-clear">' +
+          '<input type="text" id="input-busqueda" placeholder="¿Qué insumo estás buscando?" value="' + escapeHtml(estado.busqueda) + '">' +
+          (estado.busqueda ? '<button class="btn-clear-busqueda" id="btn-clear-busqueda" aria-label="Borrar búsqueda">' + icono("close", 16) + '</button>' : '') +
+        '</div>' +
         '<button class="btn-buscar-icono" id="btn-buscar-icono" aria-label="Buscar">' + icono("search", 20) + '</button>' +
       '</div>' +
       '<div class="pills-row">' +
+        '<button class="chip-envio' + (estado.filtroEnvioNacional ? ' activo' : '') + '" id="chip-envio-nacional">' + icono("truck", 15) + ' Envío a todo el país</button>' +
         selectPillHtml("select-categoria", catOpciones, estado.filtroCategoria, "Categoría") +
         selectPillHtml("select-zona", zonaOpciones, estado.filtroZona, "Zona") +
       '</div>' +
@@ -444,7 +457,10 @@
           '</div>' +
           '<div class="proveedor-bottom">' +
             '<span class="proveedor-precio">' + formatearPrecio() + '</span>' +
-            '<a class="btn-carrito" href="' + grupo.enlace + '" target="_blank" rel="noopener" aria-label="Ver tienda de ' + escapeHtml(grupo.nombreNegocio) + '" data-stop-propagation="1">' + icono("cart", 18) + '</a>' +
+            '<span class="proveedor-acciones">' +
+              (grupo.whatsapp ? '<a class="btn-whatsapp" href="https://wa.me/' + grupo.whatsapp + '" target="_blank" rel="noopener" aria-label="WhatsApp de ' + escapeHtml(grupo.nombreNegocio) + '" data-stop-propagation="1">' + icono("whatsapp", 18) + '</a>' : '') +
+              '<a class="btn-carrito" href="' + grupo.enlace + '" target="_blank" rel="noopener" aria-label="Ver tienda de ' + escapeHtml(grupo.nombreNegocio) + '" data-stop-propagation="1">' + icono("cart", 18) + '</a>' +
+            '</span>' +
           '</div>' +
         '</div>' +
       '</div>'
@@ -463,6 +479,8 @@
     if (!grupo) return '<div class="estado-vacio"><p>No encontramos este proveedor.</p></div>';
     var catPrincipal = categoriaInfo(grupo.categorias[0]);
     var esInstagram = grupo.enlace.indexOf("instagram.com") !== -1;
+    var esWhatsappLink = grupo.enlace.indexOf("wa.me") !== -1;
+    var esTelefono = grupo.enlace.indexOf("tel:") === 0;
     var handleInstagram = esInstagram ? grupo.enlace.replace(/\/$/, "").split("/").pop() : null;
 
     var ofreceHtml = grupo.entradas.map(function (e) {
@@ -480,6 +498,23 @@
       if (e.notas && notasUnicas.indexOf(e.notas) === -1) notasUnicas.push(e.notas);
     });
 
+    var filaWhatsapp = "";
+    if (grupo.whatsapp && !esWhatsappLink) {
+      filaWhatsapp =
+        '<a class="detalle-fila" href="https://wa.me/' + grupo.whatsapp + '" target="_blank" rel="noopener">' +
+          '<span>' + icono("whatsapp", 20) + '</span>' +
+          '<span>WhatsApp<br><small>+' + grupo.whatsapp + '</small></span>' +
+        '</a>';
+    }
+
+    var filaPrincipal =
+      '<a class="detalle-fila" href="' + grupo.enlace + '" target="_blank" rel="noopener">' +
+        '<span>' + (esWhatsappLink ? icono("whatsapp", 20) : esInstagram ? icono("instagram", 20) : esTelefono ? icono("cart", 20) : icono("web", 20)) + '</span>' +
+        '<span>' + (esWhatsappLink ? "WhatsApp" : esInstagram ? "Instagram" : esTelefono ? "Teléfono" : "Sitio web") + '<br><small>' +
+          (esWhatsappLink ? "+" + grupo.enlace.replace(/^https?:\/\/wa\.me\//, "") : esInstagram ? "@" + escapeHtml(handleInstagram) : esTelefono ? grupo.enlace.replace("tel:", "") : escapeHtml(grupo.enlace.replace(/^https?:\/\//, ""))) +
+        '</small></span>' +
+      '</a>';
+
     return (
       '<div class="detalle-card">' +
         '<span class="proveedor-avatar proveedor-avatar-grande" style="background:' + hexConAlpha(catPrincipal.color, "26") + ';color:' + catPrincipal.color + '">' + iniciales(grupo.nombreNegocio) + '</span>' +
@@ -495,12 +530,10 @@
         '<div class="detalle-oferta-lista">' + ofreceHtml + '</div>' +
       '</div>' +
       (notasUnicas.length ? '<div class="detalle-seccion"><h3>Sobre el proveedor</h3>' + notasUnicas.map(function (n) { return '<p>' + escapeHtml(n) + '</p>'; }).join("") + '</div>' : '') +
-      '<div class="detalle-seccion">' +
+      '<div class="detalle-seccion detalle-contacto">' +
         '<h3>Contacto</h3>' +
-        '<a class="detalle-fila" href="' + grupo.enlace + '" target="_blank" rel="noopener">' +
-          '<span>' + (esInstagram ? icono("instagram", 20) : icono("web", 20)) + '</span>' +
-          '<span>' + (esInstagram ? "Instagram" : "Sitio web") + '<br><small>' + (esInstagram ? "@" + escapeHtml(handleInstagram) : escapeHtml(grupo.enlace.replace(/^https?:\/\//, ""))) + '</small></span>' +
-        '</a>' +
+        filaWhatsapp +
+        filaPrincipal +
       '</div>' +
       '<div class="detalle-seccion"><p class="proveedor-fecha">Actualizado: ' + formatearFecha(grupo.ultimaActualizacion) + '</p></div>' +
       '<a class="btn-principal ancho-completo btn-visitar-tienda" href="' + grupo.enlace + '" target="_blank" rel="noopener">Visitar tienda</a>'
@@ -538,7 +571,7 @@
         '<h3>Datos</h3>' +
         '<button class="btn-peligro ancho-completo" id="btn-borrar-favoritos">Borrar todos los favoritos</button>' +
       '</div>' +
-      '<p class="texto-legal">VELAS es una guía informativa de proveedores. No participamos en las transacciones ni garantizamos precios, stock o calidad de los productos de terceros.</p>'
+      '<p class="texto-legal">Proveedores de Velas Artesanales es una guía informativa de proveedores. No participamos en las transacciones ni garantizamos precios, stock o calidad de los productos de terceros.</p>'
     );
   }
 
@@ -555,6 +588,7 @@
       btn.addEventListener("click", function () {
         estado.filtroCategoria = btn.dataset.irCategoria;
         estado.filtroZona = "";
+        estado.filtroEnvioNacional = false;
         estado.busqueda = "";
         irAPantalla("buscar");
       });
@@ -569,7 +603,7 @@
 
     var btnVerTodos = $("#btn-ver-todos-destacados");
     if (btnVerTodos) btnVerTodos.addEventListener("click", function () {
-      estado.filtroCategoria = ""; estado.filtroZona = ""; estado.busqueda = "";
+      estado.filtroCategoria = ""; estado.filtroZona = ""; estado.filtroEnvioNacional = false; estado.busqueda = "";
       irAPantalla("buscar");
     });
 
@@ -593,6 +627,11 @@
         if (el) { el.focus(); el.selectionStart = el.selectionEnd = el.value.length; }
       });
     }
+    var btnClearBusqueda = $("#btn-clear-busqueda");
+    if (btnClearBusqueda) btnClearBusqueda.addEventListener("click", function () {
+      estado.busqueda = "";
+      renderPantalla();
+    });
 
     var selectCategoria = $("#select-categoria");
     if (selectCategoria) selectCategoria.addEventListener("change", function (e) {
@@ -602,6 +641,11 @@
     var selectZona = $("#select-zona");
     if (selectZona) selectZona.addEventListener("change", function (e) {
       estado.filtroZona = e.target.value;
+      renderPantalla();
+    });
+    var chipEnvio = $("#chip-envio-nacional");
+    if (chipEnvio) chipEnvio.addEventListener("click", function () {
+      estado.filtroEnvioNacional = !estado.filtroEnvioNacional;
       renderPantalla();
     });
 

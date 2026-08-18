@@ -13,6 +13,7 @@ window.PROVEEDORES = [
     precio: 0,
     unidad: "por kg",
     ubicacion: "CABA",
+    envioNacional: true,
     enlace: "https://www.grupoutopia.com.ar/products/cera-de-soja-x-25-kg",
     notas: "Cera de soja x 20-25kg. Envíos a todo el país. Verificar precio actualizado en el sitio.",
     ultimaActualizacion: "2026-08-03"
@@ -26,6 +27,7 @@ window.PROVEEDORES = [
     precio: 0,
     unidad: "por kg",
     ubicacion: "GBA",
+    envioNacional: true,
     enlace: "https://insumosoeste.com.ar/products/cera-de-soja-premium-5-kg-Jz9mkVkM",
     notas: "Cera de soja premium 5kg. Ciudadela, Buenos Aires. Envíos a todo el país, entrega en 24-48hs. Verificar precio actualizado.",
     ultimaActualizacion: "2026-08-03"
@@ -36,7 +38,8 @@ window.PROVEEDORES = [
     categoria: "ceras",
     precio: 98298,
     unidad: "por caja de 20kg",
-    ubicacion: "Envío nacional",
+    ubicacion: "CABA",
+    envioNacional: true,
     enlace: "https://mayoristas.elreydelfibro.com.ar/productos/cera-de-soja-x20kg/",
     notas: "Cera de soja premium, caja x 20kg. Precio de referencia relevado en agosto 2026, puede haber cambiado.",
     ultimaActualizacion: "2026-08-03"
@@ -47,7 +50,8 @@ window.PROVEEDORES = [
     categoria: "ceras",
     precio: 0,
     unidad: "kit mayorista",
-    ubicacion: "Envío nacional",
+    ubicacion: "GBA",
+    envioNacional: true,
     enlace: "https://puraquimica.com.ar/producto/kit-mayorista-velas-de-cera-de-soja/",
     notas: "Kit mayorista: 20kg cera de soja + 10m pabilo + 100 chapitas + esencia + 2kg ácido esteárico (endurecedor). Ideal para empezar. Verificar precio.",
     ultimaActualizacion: "2026-08-03"
@@ -60,8 +64,10 @@ window.PROVEEDORES = [
     categoria: "ceras",
     precio: 0,
     unidad: "por kg",
-    ubicacion: "Envío nacional",
+    ubicacion: "CABA",
+    envioNacional: true,
     enlace: "https://www.auparsrl.com.ar/",
+    whatsapp: "5491157443917",
     notas: "Cera de soja comercial x 1kg. Verificar precio y disponibilidad.",
     ultimaActualizacion: "2026-08-03"
   },
@@ -73,7 +79,8 @@ window.PROVEEDORES = [
     categoria: "fragancias",
     precio: 0,
     unidad: "unidad",
-    ubicacion: "Envío nacional",
+    ubicacion: "Interior",
+    envioNacional: true,
     enlace: "https://casaallegra.com.ar/insumos/cera-de-soja/",
     notas: "Esencias de autor para velas, línea clásica y premium. También vende pabilos y cera. Verificar precio.",
     ultimaActualizacion: "2026-08-03"
@@ -86,7 +93,8 @@ window.PROVEEDORES = [
     categoria: "pabilos",
     precio: 0,
     unidad: "unidad",
-    ubicacion: "Envío nacional",
+    ubicacion: "Interior",
+    envioNacional: true,
     enlace: "https://casaallegra.com.ar/",
     notas: "Sección \"Pabilos & Más\" del mismo proveedor. Verificar precio y variedad de grosores.",
     ultimaActualizacion: "2026-08-03"
@@ -100,6 +108,7 @@ window.PROVEEDORES = [
     precio: 0,
     unidad: "por unidad",
     ubicacion: "GBA",
+    envioNacional: false,
     enlace: "https://insumosoeste.com.ar/categories/moldes-de-silicona/products",
     notas: "Moldes de silicona, mismo proveedor que la cera. Conviene comprar junto para ahorrar en envío.",
     ultimaActualizacion: "2026-08-03"
@@ -110,7 +119,8 @@ window.PROVEEDORES = [
     categoria: "moldes",
     precio: 0,
     unidad: "por unidad",
-    ubicacion: "Envío nacional",
+    ubicacion: "GBA",
+    envioNacional: true,
     enlace: "https://www.coursing.com.ar/sellos/moldes/",
     notas: "Moldes para velas, también vende esencias concentradas, cera y aditivos, y envases/contenedores.",
     ultimaActualizacion: "2026-08-03"
@@ -121,7 +131,8 @@ window.PROVEEDORES = [
     categoria: "moldes",
     precio: 3629,
     unidad: "por unidad",
-    ubicacion: "Envío nacional",
+    ubicacion: "CABA",
+    envioNacional: true,
     enlace: "https://www.mayoristaenonce.com.ar/product-category/moldes/molde-de-velas/",
     notas: "Molde de silicona tricolor multi-diseño. Precio de referencia relevado en agosto 2026.",
     ultimaActualizacion: "2026-08-03"
@@ -132,7 +143,8 @@ window.PROVEEDORES = [
     categoria: "moldes",
     precio: 450,
     unidad: "por unidad desde",
-    ubicacion: "Envío nacional",
+    ubicacion: "GBA",
+    envioNacional: true,
     enlace: "https://doctorglitter.mitiendanube.com/velas-y-jabones/velas/moldes3/",
     notas: "Moldes de silicona variados desde $450. Precio de referencia relevado en agosto 2026, varía según diseño.",
     ultimaActualizacion: "2026-08-03"
@@ -143,7 +155,8 @@ window.PROVEEDORES = [
     categoria: "moldes",
     precio: 0,
     unidad: "por unidad",
-    ubicacion: "Envío nacional",
+    ubicacion: "GBA",
+    envioNacional: true,
     enlace: "https://www.tiendanativa.com.ar/recipientes1/envases/moldes-de-silicona-para-velas/",
     notas: "Moldes de silicona para velas de pilar. Verificar precio.",
     ultimaActualizacion: "2026-08-03"
@@ -156,7 +169,8 @@ window.PROVEEDORES = [
     categoria: "ceras",
     precio: 0,
     unidad: "unidad",
-    ubicacion: "Envío nacional",
+    ubicacion: "CABA",
+    envioNacional: true,
     enlace: "https://www.instagram.com/tiarobertina/",
     notas: "Cera de soja. Verificar link de Instagram y precio actualizado (dato aportado, no confirmado por búsqueda).",
     ultimaActualizacion: "2026-08-03"
@@ -167,7 +181,8 @@ window.PROVEEDORES = [
     categoria: "moldes",
     precio: 0,
     unidad: "por unidad",
-    ubicacion: "Envío nacional",
+    ubicacion: "GBA",
+    envioNacional: true,
     enlace: "https://www.instagram.com/fedeayereposteria/",
     notas: "Moldes de silicona. Verificar link de Instagram y precio (dato aportado, no confirmado por búsqueda).",
     ultimaActualizacion: "2026-08-03"
@@ -178,7 +193,8 @@ window.PROVEEDORES = [
     categoria: "moldes",
     precio: 0,
     unidad: "por unidad",
-    ubicacion: "Envío nacional",
+    ubicacion: "GBA",
+    envioNacional: true,
     enlace: "https://www.instagram.com/decoloresreposteria/",
     notas: "Moldes de silicona. Verificar link de Instagram exacto y precio (dato aportado, no confirmado por búsqueda).",
     ultimaActualizacion: "2026-08-03"
@@ -189,7 +205,8 @@ window.PROVEEDORES = [
     categoria: "moldes",
     precio: 0,
     unidad: "por unidad",
-    ubicacion: "Envío nacional",
+    ubicacion: "Interior",
+    envioNacional: true,
     enlace: "https://www.instagram.com/merakimoldes/",
     notas: "Moldes de silicona. Verificar link de Instagram y precio (dato aportado, no confirmado por búsqueda).",
     ultimaActualizacion: "2026-08-03"
@@ -201,6 +218,7 @@ window.PROVEEDORES = [
     precio: 0,
     unidad: "por unidad",
     ubicacion: "GBA",
+    envioNacional: false,
     enlace: "https://www.instagram.com/artee.home/",
     notas: "Velas, figuras en yeso y moldes de silicona. Ing. Allan, Florencio Varela. Cuenta verificada por búsqueda.",
     ultimaActualizacion: "2026-08-03"
@@ -212,6 +230,7 @@ window.PROVEEDORES = [
     precio: 0,
     unidad: "por unidad",
     ubicacion: "Interior",
+    envioNacional: false,
     enlace: "https://www.instagram.com/tusmoldes_encasa/",
     notas: "Moldes de silicona, zona Interior. Verificar precio actualizado (dato aportado, no confirmado por búsqueda).",
     ultimaActualizacion: "2026-08-03"
@@ -224,8 +243,10 @@ window.PROVEEDORES = [
     categoria: "ceras",
     precio: 11540,
     unidad: "por kg",
-    ubicacion: "Envío nacional",
+    ubicacion: "CABA",
+    envioNacional: true,
     enlace: "https://deepa.com.ar/insumos/cera-de-soja/",
+    whatsapp: "541168848816",
     notas: "Cera APF 60 Astra en escamas. Envíos por moto y Correo Argentino a todo el país. WhatsApp: wa.me/541168848816. Precio verificado en la web (agosto 2026).",
     ultimaActualizacion: "2026-08-03"
   },
@@ -237,8 +258,10 @@ window.PROVEEDORES = [
     categoria: "pabilos",
     precio: 1000,
     unidad: "por pack de 10 chapas",
-    ubicacion: "Envío nacional",
+    ubicacion: "CABA",
+    envioNacional: true,
     enlace: "https://deepa.com.ar/insumos/pabilos/",
+    whatsapp: "541168848816",
     notas: "Sección de pabilos y accesorios (chapitas). Envíos a todo el país. Precio de referencia del accesorio verificado en la web.",
     ultimaActualizacion: "2026-08-03"
   },
@@ -250,8 +273,10 @@ window.PROVEEDORES = [
     categoria: "fragancias",
     precio: 9300,
     unidad: "por 100ml",
-    ubicacion: "Envío nacional",
+    ubicacion: "CABA",
+    envioNacional: true,
     enlace: "https://deepa.com.ar/insumos/esencias-concentradas/",
+    whatsapp: "541168848816",
     notas: "Esencias concentradas para velas, más de 20 aromas disponibles. Precio verificado en la web (agosto 2026).",
     ultimaActualizacion: "2026-08-03"
   },
@@ -263,8 +288,10 @@ window.PROVEEDORES = [
     categoria: "colorantes",
     precio: 2430,
     unidad: "por 10g",
-    ubicacion: "Envío nacional",
+    ubicacion: "CABA",
+    envioNacional: true,
     enlace: "https://deepa.com.ar/productos/pigmento-mica-powder-polvo-metalizado-para-velas-o-resina-10g-aprox/",
+    whatsapp: "541168848816",
     notas: "Pigmento mica powder (polvo metalizado), 30 colores disponibles. Precio verificado en la web (agosto 2026).",
     ultimaActualizacion: "2026-08-03"
   },
@@ -276,8 +303,10 @@ window.PROVEEDORES = [
     categoria: "moldes",
     precio: 7900,
     unidad: "por unidad",
-    ubicacion: "Envío nacional",
+    ubicacion: "CABA",
+    envioNacional: true,
     enlace: "https://deepa.com.ar/moldes-de-silicona/moldes-para-velas-de-soja-jabones/",
+    whatsapp: "541168848816",
     notas: "Moldes de silicona específicos para velas de soja y jabones. Precio de referencia (Molde Recipiente para Velas 6) verificado en la web.",
     ultimaActualizacion: "2026-08-03"
   },
@@ -289,8 +318,10 @@ window.PROVEEDORES = [
     categoria: "recipientes",
     precio: 1900,
     unidad: "por unidad",
-    ubicacion: "Envío nacional",
+    ubicacion: "CABA",
+    envioNacional: true,
     enlace: "https://deepa.com.ar/productos-de-madera/",
+    whatsapp: "541168848816",
     notas: "Latas para velas y otros recipientes. Precio de referencia (Lata para Velas) verificado en la web.",
     ultimaActualizacion: "2026-08-03"
   },
@@ -302,7 +333,8 @@ window.PROVEEDORES = [
     categoria: "recipientes",
     precio: 3290,
     unidad: "por unidad",
-    ubicacion: "Envío nacional",
+    ubicacion: "GBA",
+    envioNacional: true,
     enlace: "https://www.mundoroccohome.com.ar/",
     notas: "Portavelas / envase Imperial blanco brillo, sin tapa. Envíos a todo el país, 3 cuotas sin interés, 20% OFF por transferencia. Precio verificado en la web (agosto 2026).",
     ultimaActualizacion: "2026-08-03"
@@ -315,7 +347,8 @@ window.PROVEEDORES = [
     categoria: "fragancias",
     precio: 6645,
     unidad: "por 100ml",
-    ubicacion: "Envío nacional",
+    ubicacion: "GBA",
+    envioNacional: true,
     enlace: "https://www.mundoroccohome.com.ar/",
     notas: "Esencias para velas, varios aromas y tamaños (50-200ml). Precio de referencia (Banana Caramelo) verificado en la web.",
     ultimaActualizacion: "2026-08-03"
@@ -328,7 +361,8 @@ window.PROVEEDORES = [
     categoria: "pabilos",
     precio: 1110,
     unidad: "por pack de 10",
-    ubicacion: "Envío nacional",
+    ubicacion: "GBA",
+    envioNacional: true,
     enlace: "https://www.mundoroccohome.com.ar/",
     notas: "Pabilo hilo de cáñamo armado con ojalillo, 9cm de alto. Precio verificado en la web (agosto 2026).",
     ultimaActualizacion: "2026-08-03"
@@ -341,7 +375,8 @@ window.PROVEEDORES = [
     categoria: "moldes",
     precio: 8900,
     unidad: "por unidad",
-    ubicacion: "Envío nacional",
+    ubicacion: "GBA",
+    envioNacional: true,
     enlace: "https://www.mundoroccohome.com.ar/",
     notas: "Molde de silicona para velas Arcoiris grande. Precio verificado en la web (agosto 2026), consultar disponibilidad.",
     ultimaActualizacion: "2026-08-03"
@@ -354,7 +389,8 @@ window.PROVEEDORES = [
     categoria: "otros",
     precio: 10990,
     unidad: "por pack de 2",
-    ubicacion: "Envío nacional",
+    ubicacion: "GBA",
+    envioNacional: true,
     enlace: "https://www.mundoroccohome.com.ar/",
     notas: "Apagavelas y otros accesorios (dijes, vinilos, glitter decorativo). Precio de referencia verificado en la web.",
     ultimaActualizacion: "2026-08-03"
@@ -368,6 +404,7 @@ window.PROVEEDORES = [
     precio: 0,
     unidad: "unidad",
     ubicacion: "CABA",
+    envioNacional: false,
     enlace: "https://ceradesoja.mitiendanube.com/cera-de-soja2/insumos-aditivos/",
     notas: "Pabilos, ojalillos y aditivos. Mismo proveedor que ya tenías (Instagram @tia.robertina), ahora con el link de su tienda oficial.",
     ultimaActualizacion: "2026-08-03"
@@ -381,6 +418,7 @@ window.PROVEEDORES = [
     precio: 0,
     unidad: "unidad",
     ubicacion: "CABA",
+    envioNacional: false,
     enlace: "https://ceradesoja.mitiendanube.com/todo-para-velas/",
     notas: "Colorantes para velas, varios colores. Tienda oficial verificada (agosto 2026).",
     ultimaActualizacion: "2026-08-03"
@@ -394,7 +432,9 @@ window.PROVEEDORES = [
     precio: 7664,
     unidad: "por kg",
     ubicacion: "CABA",
+    envioNacional: true,
     enlace: "https://tiendaaupar.com.ar/ceras-de-soja/",
+    whatsapp: "5491157443917",
     notas: "Local histórico en Villa Crespo desde 1939. Cera de soja comercial x 1kg. Envíos a todo el país, entregas en 24hs en CABA/GBA. WhatsApp: wa.me/5491157443917. Precio verificado en la web (agosto 2026).",
     ultimaActualizacion: "2026-08-03"
   },
@@ -407,7 +447,9 @@ window.PROVEEDORES = [
     precio: 6047,
     unidad: "por 10 metros",
     ubicacion: "CABA",
+    envioNacional: false,
     enlace: "https://tiendaaupar.com.ar/insumos-para-velas/pabilos/",
+    whatsapp: "5491157443917",
     notas: "Pabilo mediano con baño x 10 metros. También tienen colorantes y fragancias en la misma sección de insumos para velas. Precio verificado en la web.",
     ultimaActualizacion: "2026-08-03"
   },
@@ -418,7 +460,9 @@ window.PROVEEDORES = [
     precio: 0,
     unidad: "packs y kits",
     ubicacion: "GBA",
+    envioNacional: true,
     enlace: "https://aromasyesenciasa.mitiendanube.com/velas-placas-y-wax-melts/",
+    whatsapp: "541161473006",
     notas: "50 años en el mercado fabricando esencias concentradas. Avellaneda, Buenos Aires. Envíos a todo el país. Asesoramiento personalizado. WhatsApp: wa.me/541161473006.",
     ultimaActualizacion: "2026-08-03"
   },
@@ -429,7 +473,9 @@ window.PROVEEDORES = [
     precio: 0,
     unidad: "unidad",
     ubicacion: "Interior",
+    envioNacional: true,
     enlace: "https://esenciasvelasmagicas.empretienda.com.ar/insumos-para-velas/cera-apf-blend-velas-magicas-moldes-lista-para-usar-x1-kilo",
+    whatsapp: "5492233012157",
     notas: "Cera APF Blend de formulación propia. Local en Mar del Plata, envíos a todo el país y Paraguay. WhatsApp: +5492233012157.",
     ultimaActualizacion: "2026-08-03"
   },
@@ -439,9 +485,47 @@ window.PROVEEDORES = [
     categoria: "recipientes",
     precio: 0,
     unidad: "unidad",
-    ubicacion: "Envío nacional",
+    ubicacion: "GBA",
+    envioNacional: true,
     enlace: "https://poligarsrl.com.ar/",
     notas: "Empresa con más de 25 años en envases de vidrio y polietileno, embalaje y descartables. Tiene sección específica de \"Velas e insumos\". Envíos a domicilio y sucursales Andreani/Correo Argentino en todo el país.",
     ultimaActualizacion: "2026-08-03"
+  },
+  {
+    id: "p038",
+    nombre: "Purpurina Vela Kits",
+    categoria: "moldes",
+    precio: 0,
+    unidad: "unidad",
+    ubicacion: "Interior",
+    envioNacional: false,
+    enlace: "https://wa.me/5493795072213",
+    whatsapp: "5493795072213",
+    notas: "Kits y moldes para velas. Contacto solo por WhatsApp, no tiene sitio web propio. Dato aportado directamente, verificar disponibilidad antes de comprar.",
+    ultimaActualizacion: "2026-08-14"
+  },
+  {
+    id: "p039",
+    nombre: "Karnauba Insumos para Artesanías",
+    categoria: "ceras",
+    precio: 0,
+    unidad: "kg",
+    ubicacion: "Interior",
+    envioNacional: false,
+    enlace: "tel:+543514113389",
+    notas: "Local físico en Córdoba Capital (Mcal. Sucre 28 / Deán Funes 398). Cera de soja, insumos para velas, jabones y sahumerios, porcelana fría, resina y yeso. No confirma envíos a todo el país, parece venta principalmente presencial. Teléfono: (0351) 411-3389.",
+    ultimaActualizacion: "2026-08-14"
+  },
+  {
+    id: "p040",
+    nombre: "Creaciones Naeli",
+    categoria: "moldes",
+    precio: 0,
+    unidad: "unidad",
+    ubicacion: "Interior",
+    envioNacional: false,
+    enlace: "https://www.facebook.com/CreacionesNaeli/",
+    notas: "Local físico en Córdoba Capital (Rioja 319, Centro). Moldes de silicona, porcelana fría, resina, velas, yeso e insumos. No confirma envíos a todo el país, parece venta principalmente presencial.",
+    ultimaActualizacion: "2026-08-14"
   }
 ];

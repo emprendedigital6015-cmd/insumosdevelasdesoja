@@ -1,31 +1,25 @@
-# VELAS
+# Proveedores de Velas Artesanales
 
-"Encontrá, comparé y elegí el mejor proveedor para tus velas."
+App para encontrar proveedores de insumos para velas artesanales: cera, moldes, esencias,
+mechas y más. Compará, guardá favoritos y accedé directo a la tienda de cada proveedor.
 
-App para encontrar proveedores de insumos para velas: ceras, pabilos, fragancias, colorantes,
-moldes, recipientes y más. Compará precios, guardá favoritos y accedé directo a la tienda de
-cada proveedor.
+## Identidad de marca
 
-## Diseño (basado en el sistema de diseño de VELAS)
+- **Logo:** isotipo circular — vela verde oliva, llama dorada, pluma dorada y ramita de
+  lavanda, dentro de un anillo fino oro champaña.
+- **Tipografía:** Poppins (geométrica, limpia, moderna).
 
-- **Logo:** frasco de vela minimalista con corazón, llama y destellos, en insignia circular con
-  degradado coral → turquesa.
-- **Íconos:** todos lineales (outline), sin relleno, mismo grosor de trazo — reemplazan los
-  emoji que se usaban antes (navegación, categorías, ubicación, envío, favoritos, etc.).
-- **Tipografía:** Poppins.
-- **Tarjetas:** radio de 18px, más separación entre ellas (20px) y entre secciones (32px).
-- **Precios:** todos se muestran como "Consultar", en una insignia mostaza.
-- **Header dinámico:** en Inicio muestra menú + logo + acceso a favoritos; en el resto de las
-  pantallas muestra flecha de volver + título.
-- **Categorías:** círculos de color suave con ícono lineal, en grilla de 4 columnas.
-- **Proveedores destacados:** carrusel horizontal en la pantalla de Inicio.
-- **Filtros:** desplegables tipo píldora (Categoría, Zona — con "Interior de País"), sin
-  ordenar por precio.
-- **Pantalla de detalle:** al tocar una tarjeta se abre la ficha del proveedor con "Lo que
-  ofrece" (todas sus categorías y precios), "Sobre el proveedor", contacto y "Visitar tienda".
-- **Favoritos vacío:** ilustración de canasta con destellos.
-- **Agrupado por negocio:** un proveedor que vende en varias categorías aparece en una sola
-  tarjeta con todas sus categorías juntas.
+## Paleta de colores (tokens de diseño)
+
+| Token | Uso | HEX |
+|---|---|---|
+| Blanco UI | Fondo general de pantallas | `#FFFFFF` |
+| Lino Suave | Tarjetas, contenedores, separadores | `#EAE7E2` |
+| Pizarra Profundo | Títulos y textos principales | `#2A3444` |
+| Gris Neutro | Subtítulos, íconos inactivos | `#657786` |
+| Oro Champaña | Botones y enlaces principales (CTA) | `#D9B974` |
+| Verde Oliva | Marca, íconos activos, éxito | `#5D6D44` |
+| Terracota | Alertas, errores, acciones críticas | `#C48A79` |
 
 ## Cómo publicarla en GitHub Pages
 
@@ -40,21 +34,15 @@ cada proveedor.
 ## Cómo actualizar el listado de proveedores
 
 Todo el listado vive en `proveedores.js`. Editalo directo en GitHub: `nombre`, `categoria`,
-`precio` (`0` = "Consultar"), `unidad`, `ubicacion`, `enlace`, `notas`, `ultimaActualizacion`.
+`precio` (`0` = "Consultar"), `unidad`, `ubicacion`, `enlace`, `notas`, `ultimaActualizacion`,
+y opcionalmente `negocio` / `nombreNegocio` para agrupar varias categorías de un mismo proveedor
+en una sola tarjeta.
 
-## Cómo funciona el agrupado por negocio
+## Qué tiene esta versión
 
-Cada proveedor puede vender en varias categorías (por ejemplo, Deepa Insumos vende cera, pabilos,
-fragancias, colorantes, moldes y recipientes). En `proveedores.js`, cada categoría de un mismo
-negocio es una entrada separada, pero comparten los campos `negocio` (una clave interna, por
-ejemplo `"deepa"`) y `nombreNegocio` (el nombre que se muestra, por ejemplo `"Deepa Insumos"`).
-La app agrupa automáticamente todas las entradas con el mismo `negocio` en una sola tarjeta,
-mostrando todas sus categorías juntas y el precio más conveniente como destacado.
+Inicio (categorías, destacados, última actualización), Buscar (filtros por categoría y zona),
+Favoritos, Configuración. Los 36 proveedores reales ya cargados, agrupados en 21 negocios.
 
-Para agregar una nueva categoría a un negocio que ya existe, copiá una de sus entradas, cambiá
-`categoria`, `precio`, `unidad` y `enlace`, y dejá el mismo `negocio` y `nombreNegocio`. Para un
-negocio nuevo con una sola categoría, simplemente no incluyas los campos `negocio` ni
-`nombreNegocio` — la app va a usar el `id` y el `nombre` de esa entrada.
-
-**Aviso:** VELAS es una guía informativa de proveedores. No participamos en las transacciones ni
-garantizamos precios, stock o calidad de los productos de terceros.
+**Aviso:** Proveedores de Velas Artesanales es una guía informativa de proveedores. No
+participamos en las transacciones ni garantizamos precios, stock o calidad de los productos
+de terceros.

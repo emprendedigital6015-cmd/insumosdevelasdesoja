@@ -1,12 +1,12 @@
 {
-  "name": "VELAS",
-  "short_name": "VELAS",
+  "name": "Proveedores de Velas Artesanales",
+  "short_name": "Velas Artesanales",
   "description": "Encontrá proveedores de insumos para velas, comparé precios y elegí la mejor opción desde una única aplicación.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#FFF8F2",
-  "theme_color": "#FFF8F2",
+  "background_color": "#FFFFFF",
+  "theme_color": "#FFFFFF",
   "lang": "es-AR",
   "icons": [
     { "src": "./icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
